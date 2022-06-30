@@ -1,6 +1,7 @@
 package com.skinnydevi.songs_of_war;
 
 import com.mojang.logging.LogUtils;
+import com.skinnydevi.songs_of_war.initializers.ItemInit;
 
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -19,6 +20,8 @@ public class SongsOfWarMod {
 	public SongsOfWarMod() {
 		IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+		ItemInit.ITEMS.register(modBus);
+
 		modBus.addListener(this::preInit);
 		modBus.addListener(this::preInitClient);
 
@@ -26,10 +29,12 @@ public class SongsOfWarMod {
 	}
 
 	private void preInit(final FMLCommonSetupEvent event) {
+		LOGGER.debug("Starting PreInit for Songs Of War...");
 		// Capabilities
 	}
 
 	private void preInitClient(final FMLClientSetupEvent event) {
+		LOGGER.debug("Starting PreInitClient for Songs Of War...");
 		// Overlays
 	}
 }

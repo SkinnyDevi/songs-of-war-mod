@@ -22,6 +22,7 @@ build
 eclipse
 run
 .DS_Store
+generated
 
 # Files from Forge MDK
 forge*changelog.txt
