@@ -1,8 +1,9 @@
 package com.skinnydevi.songs_of_war.common.items.itemgroups;
 
+import com.skinnydevi.songs_of_war.common.items.Weaponry;
+
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 
 public class WeaponryTab extends CreativeModeTab {
 
@@ -12,7 +13,7 @@ public class WeaponryTab extends CreativeModeTab {
 
 	@Override
 	public ItemStack makeIcon() {
-		return new ItemStack(Items.IRON_AXE);
+		return new ItemStack(Weaponry.DEATHSINGER_SWORD);
 	}
 
 }

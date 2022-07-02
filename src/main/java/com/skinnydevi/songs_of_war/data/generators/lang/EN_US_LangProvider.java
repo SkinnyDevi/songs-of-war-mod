@@ -26,7 +26,17 @@ public class EN_US_LangProvider extends LanguageProvider {
 		add(ItemInit.IRON_FORGED_SWORD.get(), "Iron Forged Sword");
 		add(ItemInit.DIAMOND_FORGED_SWORD.get(), "Diamond Forged Sword");
 
-		// Blacksmiths
+		add(ItemInit.DEATHSINGER_SWORD.get(), "DeathSinger's Sword");
+		add(ItemInit.TIDESINGER_STAFF.get(), "TideSinger's Staff");
+
+		// Weaponry - Clan Staffs
+		add(ItemInit.NESTORIS_STAFF.get(), "Nestoris Clan Staff");
+		add(ItemInit.KALTARIS_STAFF.get(), "Kaltaris Clan Staff");
+		add(ItemInit.MENDORIS_STAFF.get(), "Mendoris Clan Staff");
+		add(ItemInit.SENDARIS_STAFF.get(), "Sendaris Clan Staff");
+		add(ItemInit.VOLTARIS_STAFF.get(), "Voltaris Clan Staff");
+
+		// Weaponry - Blacksmiths
 		add(ItemInit.IRON_BLACKSMITH_HAMMER.get(), "Blacksmith's Iron Hammer");
 		add(ItemInit.DIAMOND_BLACKSMITH_HAMMER.get(), "Blacksmith's Diamond Hammer");
 	}

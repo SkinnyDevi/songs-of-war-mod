@@ -19,6 +19,22 @@ public class ItemInit {
 	public static final RegistryObject<Item> DIAMOND_FORGED_SWORD = ITEMS.register("diamond_forged_sword",
 			() -> Weaponry.DIAMOND_FORGED_SWORD);
 
+	public static final RegistryObject<Item> NESTORIS_STAFF = ITEMS.register("nestoris_staff",
+			() -> Weaponry.NESTORIS_STAFF);
+	public static final RegistryObject<Item> KALTARIS_STAFF = ITEMS.register("kaltaris_staff",
+			() -> Weaponry.KALTARIS_STAFF);
+	public static final RegistryObject<Item> MENDORIS_STAFF = ITEMS.register("mendoris_staff",
+			() -> Weaponry.MENDORIS_STAFF);
+	public static final RegistryObject<Item> SENDARIS_STAFF = ITEMS.register("sendaris_staff",
+			() -> Weaponry.SENDARIS_STAFF);
+	public static final RegistryObject<Item> VOLTARIS_STAFF = ITEMS.register("voltaris_staff",
+			() -> Weaponry.VOLTARIS_STAFF);
+
+	public static final RegistryObject<Item> DEATHSINGER_SWORD = ITEMS.register("deathsinger_sword",
+			() -> Weaponry.DEATHSINGER_SWORD);
+	public static final RegistryObject<Item> TIDESINGER_STAFF = ITEMS.register("tidesinger_staff",
+			() -> Weaponry.TIDESINGER_STAFF);
+
 	// BLACKSMITHS
 	public static final RegistryObject<Item> IRON_BLACKSMITH_HAMMER = ITEMS.register("iron_blacksmith_hammer",
 			() -> Weaponry.IRON_BLACKSMITH_HAMMER);
