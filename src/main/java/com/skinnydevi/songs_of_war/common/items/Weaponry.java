@@ -11,6 +11,10 @@ public class Weaponry {
 		return new Item.Properties().tab(SongsOfWarMod.WEAPONRY_TAB).defaultDurability(durability);
 	}
 
+	private static Item.Properties getForgerProps(int durability) {
+		return new Item.Properties().tab(SongsOfWarMod.FORGERY_TAB).defaultDurability(durability);
+	}
+
 	private static int getDamage(int damage) {
 		return damage - 3;
 	}
@@ -46,6 +50,6 @@ public class Weaponry {
 			getWeaponProps(1200));
 
 	// BLACKSMITHS
-	public static final SwordItem IRON_BLACKSMITH_HAMMER = new SwordItem(Tiers.IRON, 0, 0, getWeaponProps(650));
-	public static final SwordItem DIAMOND_BLACKSMITH_HAMMER = new SwordItem(Tiers.DIAMOND, 1, 0, getWeaponProps(1700));
+	public static final SwordItem IRON_BLACKSMITH_HAMMER = new SwordItem(Tiers.IRON, 0, 0, getForgerProps(650));
+	public static final SwordItem DIAMOND_BLACKSMITH_HAMMER = new SwordItem(Tiers.DIAMOND, 1, 0, getForgerProps(1700));
 }

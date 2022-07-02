@@ -1,6 +1,7 @@
 package com.skinnydevi.songs_of_war.data.generators.lang;
 
 import com.skinnydevi.songs_of_war.SongsOfWarMod;
+import com.skinnydevi.songs_of_war.initializers.BlockInit;
 import com.skinnydevi.songs_of_war.initializers.ItemInit;
 
 import net.minecraft.data.DataGenerator;
@@ -18,8 +19,11 @@ public class EN_US_LangProvider extends LanguageProvider {
 
 	@Override
 	protected void addTranslations() {
-		// Creative Tabs
+		// CREATIVE TABS
 		add("itemGroup.sow_weapons_tab", "Songs Of War Weaponry");
+		add("itemGroup.sow_forgery_tab", "Songs Of War Forgery");
+
+		// ITEMS
 
 		// Weapons
 		add(ItemInit.STUBBY_AXE.get(), "Stubby Axe");
@@ -39,6 +43,9 @@ public class EN_US_LangProvider extends LanguageProvider {
 		// Weaponry - Blacksmiths
 		add(ItemInit.IRON_BLACKSMITH_HAMMER.get(), "Blacksmith's Iron Hammer");
 		add(ItemInit.DIAMOND_BLACKSMITH_HAMMER.get(), "Blacksmith's Diamond Hammer");
+
+		// BLOCKS
+		add(BlockInit.WEAPON_FORGER.get(), "Weapon Forger");
 	}
 
 }

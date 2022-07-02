@@ -1,7 +1,9 @@
 package com.skinnydevi.songs_of_war;
 
 import com.mojang.logging.LogUtils;
+import com.skinnydevi.songs_of_war.common.items.itemgroups.ForgeryTab;
 import com.skinnydevi.songs_of_war.common.items.itemgroups.WeaponryTab;
+import com.skinnydevi.songs_of_war.initializers.BlockInit;
 import com.skinnydevi.songs_of_war.initializers.ItemInit;
 
 import net.minecraft.world.item.CreativeModeTab;
@@ -20,11 +22,13 @@ public class SongsOfWarMod {
 	private static final Logger LOGGER = LogUtils.getLogger();
 
 	public static final CreativeModeTab WEAPONRY_TAB = new WeaponryTab();
+	public static final CreativeModeTab FORGERY_TAB = new ForgeryTab();
 
 	public SongsOfWarMod() {
 		IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
 
 		ItemInit.ITEMS.register(modBus);
+		BlockInit.BLOCKS.register(modBus);
 
 		modBus.addListener(this::preInit);
 		modBus.addListener(this::preInitClient);
