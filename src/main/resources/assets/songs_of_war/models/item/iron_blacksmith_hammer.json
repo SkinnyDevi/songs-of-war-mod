@@ -1,0 +1,273 @@
+{
+	"credit": "Made with Blockbench",
+	"texture_size": [14, 15],
+	"textures": {
+		"0": "songs_of_war:item/iron_blacksmith_hammer",
+		"particle": "songs_of_war:item/iron_blacksmith_hammer"
+	},
+	"elements": [
+		{
+			"name": "iron_blacksmith_hammer_0",
+			"from": [6.85714, 10.28571, 0],
+			"to": [8, 11.42857, 8],
+			"rotation": {"angle": 0, "axis": "z", "origin": [0, 0, 17]},
+			"faces": {
+				"north": {"uv": [11.42857, 0, 10.28571, 1.06667], "rotation": 90, "texture": "#0"},
+				"east": {"uv": [10.28571, 7.46667, 11.42857, 0], "rotation": 270, "texture": "#0"},
+				"south": {"uv": [10.28571, 6.4, 11.42857, 7.46667], "rotation": 270, "texture": "#0"},
+				"west": {"uv": [10.28571, 0, 11.42857, 7.46667], "rotation": 270, "texture": "#0"},
+				"up": {"uv": [10.28571, 0, 11.42857, 7.46667], "texture": "#0"},
+				"down": {"uv": [10.28571, 0, 11.42857, 7.46667], "rotation": 180, "texture": "#0"}
+			}
+		},
+		{
+			"name": "iron_blacksmith_hammer_1",
+			"from": [6.85714, 9.14286, 1.14286],
+			"to": [8, 10.28571, 4.57143],
+			"rotation": {"angle": 0, "axis": "z", "origin": [0, 0, 17]},
+			"faces": {
+				"north": {"uv": [10.28571, 1.06667, 9.14286, 2.13333], "rotation": 90, "texture": "#0"},
+				"east": {"uv": [9.14286, 4.26667, 10.28571, 1.06667], "rotation": 270, "texture": "#0"},
+				"south": {"uv": [9.14286, 3.2, 10.28571, 4.26667], "rotation": 270, "texture": "#0"},
+				"west": {"uv": [9.14286, 1.06667, 10.28571, 4.26667], "rotation": 270, "texture": "#0"},
+				"up": {"uv": [9.14286, 1.06667, 10.28571, 4.26667], "texture": "#0"},
+				"down": {"uv": [9.14286, 1.06667, 10.28571, 4.26667], "rotation": 180, "texture": "#0"}
+			}
+		},
+		{
+			"name": "iron_blacksmith_hammer_2",
+			"from": [6.85714, 11.42857, 1.14286],
+			"to": [8, 12.57143, 6.85714],
+			"rotation": {"angle": 0, "axis": "z", "origin": [0, 0, 17]},
+			"faces": {
+				"north": {"uv": [12.57143, 1.06667, 11.42857, 2.13333], "rotation": 90, "texture": "#0"},
+				"east": {"uv": [11.42857, 6.4, 12.57143, 1.06667], "rotation": 270, "texture": "#0"},
+				"south": {"uv": [11.42857, 5.33333, 12.57143, 6.4], "rotation": 270, "texture": "#0"},
+				"west": {"uv": [11.42857, 1.06667, 12.57143, 6.4], "rotation": 270, "texture": "#0"},
+				"up": {"uv": [11.42857, 1.06667, 12.57143, 6.4], "texture": "#0"},
+				"down": {"uv": [11.42857, 1.06667, 12.57143, 6.4], "rotation": 180, "texture": "#0"}
+			}
+		},
+		{
+			"name": "iron_blacksmith_hammer_3",
+			"from": [6.85714, 8, 2.28571],
+			"to": [8, 9.14286, 3.42857],
+			"rotation": {"angle": 0, "axis": "z", "origin": [0, 0, 17]},
+			"faces": {
+				"north": {"uv": [9.14286, 2.13333, 8, 3.2], "rotation": 90, "texture": "#0"},
+				"east": {"uv": [8, 3.2, 9.14286, 2.13333], "rotation": 270, "texture": "#0"},
+				"south": {"uv": [8, 2.13333, 9.14286, 3.2], "rotation": 270, "texture": "#0"},
+				"west": {"uv": [8, 2.13333, 9.14286, 3.2], "rotation": 270, "texture": "#0"},
+				"up": {"uv": [8, 2.13333, 9.14286, 3.2], "texture": "#0"},
+				"down": {"uv": [8, 2.13333, 9.14286, 3.2], "rotation": 180, "texture": "#0"}
+			}
+		},
+		{
+			"name": "iron_blacksmith_hammer_4",
+			"from": [6.85714, 12.57143, 2.28571],
+			"to": [8, 13.71429, 8],
+			"rotation": {"angle": 0, "axis": "z", "origin": [0, 0, 17]},
+			"faces": {
+				"north": {"uv": [13.71429, 2.13333, 12.57143, 3.2], "rotation": 90, "texture": "#0"},
+				"east": {"uv": [12.57143, 7.46667, 13.71429, 2.13333], "rotation": 270, "texture": "#0"},
+				"south": {"uv": [12.57143, 6.4, 13.71429, 7.46667], "rotation": 270, "texture": "#0"},
+				"west": {"uv": [12.57143, 2.13333, 13.71429, 7.46667], "rotation": 270, "texture": "#0"},
+				"up": {"uv": [12.57143, 2.13333, 13.71429, 7.46667], "texture": "#0"},
+				"down": {"uv": [12.57143, 2.13333, 13.71429, 7.46667], "rotation": 180, "texture": "#0"}
+			}
+		},
+		{
+			"name": "iron_blacksmith_hammer_5",
+			"from": [6.85714, 13.71429, 3.42857],
+			"to": [8, 14.85714, 8],
+			"rotation": {"angle": 0, "axis": "z", "origin": [0, 0, 17]},
+			"faces": {
+				"north": {"uv": [14.85714, 3.2, 13.71429, 4.26667], "rotation": 90, "texture": "#0"},
+				"east": {"uv": [13.71429, 7.46667, 14.85714, 3.2], "rotation": 270, "texture": "#0"},
+				"south": {"uv": [13.71429, 6.4, 14.85714, 7.46667], "rotation": 270, "texture": "#0"},
+				"west": {"uv": [13.71429, 3.2, 14.85714, 7.46667], "rotation": 270, "texture": "#0"},
+				"up": {"uv": [13.71429, 3.2, 14.85714, 7.46667], "texture": "#0"},
+				"down": {"uv": [13.71429, 3.2, 14.85714, 7.46667], "rotation": 180, "texture": "#0"}
+			}
+		},
+		{
+			"name": "iron_blacksmith_hammer_6",
+			"from": [6.85714, 14.85714, 4.57143],
+			"to": [8, 16, 8],
+			"rotation": {"angle": 0, "axis": "z", "origin": [0, 0, 17]},
+			"faces": {
+				"north": {"uv": [16, 4.26667, 14.85714, 5.33333], "rotation": 90, "texture": "#0"},
+				"east": {"uv": [14.85714, 7.46667, 16, 4.26667], "rotation": 270, "texture": "#0"},
+				"south": {"uv": [14.85714, 6.4, 16, 7.46667], "rotation": 270, "texture": "#0"},
+				"west": {"uv": [14.85714, 4.26667, 16, 7.46667], "rotation": 270, "texture": "#0"},
+				"up": {"uv": [14.85714, 4.26667, 16, 7.46667], "texture": "#0"},
+				"down": {"uv": [14.85714, 4.26667, 16, 7.46667], "rotation": 180, "texture": "#0"}
+			}
+		},
+		{
+			"name": "iron_blacksmith_hammer_7",
+			"from": [6.85714, 9.14286, 5.71429],
+			"to": [8, 10.28571, 9.14286],
+			"rotation": {"angle": 0, "axis": "z", "origin": [0, 0, 17]},
+			"faces": {
+				"north": {"uv": [10.28571, 5.33333, 9.14286, 6.4], "rotation": 90, "texture": "#0"},
+				"east": {"uv": [9.14286, 8.53333, 10.28571, 5.33333], "rotation": 270, "texture": "#0"},
+				"south": {"uv": [9.14286, 7.46667, 10.28571, 8.53333], "rotation": 270, "texture": "#0"},
+				"west": {"uv": [9.14286, 5.33333, 10.28571, 8.53333], "rotation": 270, "texture": "#0"},
+				"up": {"uv": [9.14286, 5.33333, 10.28571, 8.53333], "texture": "#0"},
+				"down": {"uv": [9.14286, 5.33333, 10.28571, 8.53333], "rotation": 180, "texture": "#0"}
+			}
+		},
+		{
+			"name": "iron_blacksmith_hammer_8",
+			"from": [6.85714, 8, 6.85714],
+			"to": [8, 9.14286, 10.28571],
+			"rotation": {"angle": 0, "axis": "z", "origin": [0, 0, 17]},
+			"faces": {
+				"north": {"uv": [9.14286, 6.4, 8, 7.46667], "rotation": 90, "texture": "#0"},
+				"east": {"uv": [8, 9.6, 9.14286, 6.4], "rotation": 270, "texture": "#0"},
+				"south": {"uv": [8, 8.53333, 9.14286, 9.6], "rotation": 270, "texture": "#0"},
+				"west": {"uv": [8, 6.4, 9.14286, 9.6], "rotation": 270, "texture": "#0"},
+				"up": {"uv": [8, 6.4, 9.14286, 9.6], "texture": "#0"},
+				"down": {"uv": [8, 6.4, 9.14286, 9.6], "rotation": 180, "texture": "#0"}
+			}
+		},
+		{
+			"name": "iron_blacksmith_hammer_9",
+			"from": [6.85714, 6.85714, 8],
+			"to": [8, 8, 11.42857],
+			"rotation": {"angle": 0, "axis": "z", "origin": [0, 0, 17]},
+			"faces": {
+				"north": {"uv": [8, 7.46667, 6.85714, 8.53333], "rotation": 90, "texture": "#0"},
+				"east": {"uv": [6.85714, 10.66667, 8, 7.46667], "rotation": 270, "texture": "#0"},
+				"south": {"uv": [6.85714, 9.6, 8, 10.66667], "rotation": 270, "texture": "#0"},
+				"west": {"uv": [6.85714, 7.46667, 8, 10.66667], "rotation": 270, "texture": "#0"},
+				"up": {"uv": [6.85714, 7.46667, 8, 10.66667], "texture": "#0"},
+				"down": {"uv": [6.85714, 7.46667, 8, 10.66667], "rotation": 180, "texture": "#0"}
+			}
+		},
+		{
+			"name": "iron_blacksmith_hammer_10",
+			"from": [6.85714, 5.71429, 9.14286],
+			"to": [8, 6.85714, 12.57143],
+			"rotation": {"angle": 0, "axis": "z", "origin": [0, 0, 17]},
+			"faces": {
+				"north": {"uv": [6.85714, 8.53333, 5.71429, 9.6], "rotation": 90, "texture": "#0"},
+				"east": {"uv": [5.71429, 11.73333, 6.85714, 8.53333], "rotation": 270, "texture": "#0"},
+				"south": {"uv": [5.71429, 10.66667, 6.85714, 11.73333], "rotation": 270, "texture": "#0"},
+				"west": {"uv": [5.71429, 8.53333, 6.85714, 11.73333], "rotation": 270, "texture": "#0"},
+				"up": {"uv": [5.71429, 8.53333, 6.85714, 11.73333], "texture": "#0"},
+				"down": {"uv": [5.71429, 8.53333, 6.85714, 11.73333], "rotation": 180, "texture": "#0"}
+			}
+		},
+		{
+			"name": "iron_blacksmith_hammer_11",
+			"from": [6.85714, 4.57143, 10.28571],
+			"to": [8, 5.71429, 13.71429],
+			"rotation": {"angle": 0, "axis": "z", "origin": [0, 0, 17]},
+			"faces": {
+				"north": {"uv": [5.71429, 9.6, 4.57143, 10.66667], "rotation": 90, "texture": "#0"},
+				"east": {"uv": [4.57143, 12.8, 5.71429, 9.6], "rotation": 270, "texture": "#0"},
+				"south": {"uv": [4.57143, 11.73333, 5.71429, 12.8], "rotation": 270, "texture": "#0"},
+				"west": {"uv": [4.57143, 9.6, 5.71429, 12.8], "rotation": 270, "texture": "#0"},
+				"up": {"uv": [4.57143, 9.6, 5.71429, 12.8], "texture": "#0"},
+				"down": {"uv": [4.57143, 9.6, 5.71429, 12.8], "rotation": 180, "texture": "#0"}
+			}
+		},
+		{
+			"name": "iron_blacksmith_hammer_12",
+			"from": [6.85714, 3.42857, 11.42857],
+			"to": [8, 4.57143, 14.85714],
+			"rotation": {"angle": 0, "axis": "z", "origin": [0, 0, 17]},
+			"faces": {
+				"north": {"uv": [4.57143, 10.66667, 3.42857, 11.73333], "rotation": 90, "texture": "#0"},
+				"east": {"uv": [3.42857, 13.86667, 4.57143, 10.66667], "rotation": 270, "texture": "#0"},
+				"south": {"uv": [3.42857, 12.8, 4.57143, 13.86667], "rotation": 270, "texture": "#0"},
+				"west": {"uv": [3.42857, 10.66667, 4.57143, 13.86667], "rotation": 270, "texture": "#0"},
+				"up": {"uv": [3.42857, 10.66667, 4.57143, 13.86667], "texture": "#0"},
+				"down": {"uv": [3.42857, 10.66667, 4.57143, 13.86667], "rotation": 180, "texture": "#0"}
+			}
+		},
+		{
+			"name": "iron_blacksmith_hammer_13",
+			"from": [6.85714, 2.28571, 12.57143],
+			"to": [8, 3.42857, 16],
+			"rotation": {"angle": 0, "axis": "z", "origin": [0, 0, 17]},
+			"faces": {
+				"north": {"uv": [3.42857, 11.73333, 2.28571, 12.8], "rotation": 90, "texture": "#0"},
+				"east": {"uv": [2.28571, 14.93333, 3.42857, 11.73333], "rotation": 270, "texture": "#0"},
+				"south": {"uv": [2.28571, 13.86667, 3.42857, 14.93333], "rotation": 270, "texture": "#0"},
+				"west": {"uv": [2.28571, 11.73333, 3.42857, 14.93333], "rotation": 270, "texture": "#0"},
+				"up": {"uv": [2.28571, 11.73333, 3.42857, 14.93333], "texture": "#0"},
+				"down": {"uv": [2.28571, 11.73333, 3.42857, 14.93333], "rotation": 180, "texture": "#0"}
+			}
+		},
+		{
+			"name": "iron_blacksmith_hammer_14",
+			"from": [6.85714, 1.14286, 13.71429],
+			"to": [8, 2.28571, 17.14286],
+			"rotation": {"angle": 0, "axis": "z", "origin": [0, 0, 17]},
+			"faces": {
+				"north": {"uv": [2.28571, 12.8, 1.14286, 13.86667], "rotation": 90, "texture": "#0"},
+				"east": {"uv": [1.14286, 16, 2.28571, 12.8], "rotation": 270, "texture": "#0"},
+				"south": {"uv": [1.14286, 14.93333, 2.28571, 16], "rotation": 270, "texture": "#0"},
+				"west": {"uv": [1.14286, 12.8, 2.28571, 16], "rotation": 270, "texture": "#0"},
+				"up": {"uv": [1.14286, 12.8, 2.28571, 16], "texture": "#0"},
+				"down": {"uv": [1.14286, 12.8, 2.28571, 16], "rotation": 180, "texture": "#0"}
+			}
+		},
+		{
+			"name": "iron_blacksmith_hammer_15",
+			"from": [6.85714, 0, 14.85714],
+			"to": [8, 1.14286, 17.14286],
+			"rotation": {"angle": 0, "axis": "z", "origin": [0, 0, 17]},
+			"faces": {
+				"north": {"uv": [1.14286, 13.86667, 0, 14.93333], "rotation": 90, "texture": "#0"},
+				"east": {"uv": [0, 16, 1.14286, 13.86667], "rotation": 270, "texture": "#0"},
+				"south": {"uv": [0, 14.93333, 1.14286, 16], "rotation": 270, "texture": "#0"},
+				"west": {"uv": [0, 13.86667, 1.14286, 16], "rotation": 270, "texture": "#0"},
+				"up": {"uv": [0, 13.86667, 1.14286, 16], "texture": "#0"},
+				"down": {"uv": [0, 13.86667, 1.14286, 16], "rotation": 180, "texture": "#0"}
+			}
+		}
+	],
+	"gui_light": "front",
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [45, 0, 0],
+			"translation": [0.6, 3.5, 1]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [45, 0, 0],
+			"translation": [-0.6, 3.5, 1]
+		},
+		"firstperson_righthand": {
+			"rotation": [25.75, 0, 0],
+			"translation": [0, 3, 0]
+		},
+		"firstperson_lefthand": {
+			"rotation": [25.75, 0, 0],
+			"translation": [0, 3, 0]
+		},
+		"ground": {
+			"translation": [0, 2.75, 0],
+			"scale": [0.8, 0.8, 0.8]
+		},
+		"gui": {
+			"rotation": [0, 90, 0],
+			"translation": [-0.25, 0, 0],
+			"scale": [0.8, 0.8, 0.8]
+		},
+		"fixed": {
+			"rotation": [0, -90, 0]
+		}
+	},
+	"groups": [
+		{
+			"name": "iron_blacksmith_hammer",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+		}
+	]
+}

@@ -13,16 +13,18 @@ public class EN_US_LangProvider extends LanguageProvider {
 	}
 
 	// private static String customdeath(String type) {
-	// return "death.attack.waterheatmod." + type;
+	// return "death.attack." + SongsOfWarMod.MOD_ID + "." + type;
 	// }
 
 	@Override
 	protected void addTranslations() {
 		// Creative Tabs
-		add("itemGroup.sow_tab", "Songs Of War");
+		add("itemGroup.sow_weapons_tab", "Songs Of War Weaponry");
 
-		// Songs
-		add(ItemInit.PROTISSIUM_SONG.get(), "Protissium Song");
+		// Weapons
+		add(ItemInit.STUBBY_AXE.get(), "Stubby Axe");
+		add(ItemInit.IRON_BLACKSMITH_HAMMER.get(), "Blacksmith's Iron Hammer");
+		add(ItemInit.DIAMOND_BLACKSMITH_HAMMER.get(), "Blacksmith's Diamond Hammer");
 	}
 
 }

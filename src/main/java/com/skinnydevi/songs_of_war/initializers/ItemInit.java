@@ -1,7 +1,7 @@
 package com.skinnydevi.songs_of_war.initializers;
 
 import com.skinnydevi.songs_of_war.SongsOfWarMod;
-import com.skinnydevi.songs_of_war.common.items.SongItems;
+import com.skinnydevi.songs_of_war.common.items.Weaponry;
 
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
@@ -12,7 +12,10 @@ public class ItemInit {
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS,
 			SongsOfWarMod.MOD_ID);
 
-	public static final RegistryObject<Item> PROTISSIUM_SONG = ITEMS.register("protissium_song",
-			() -> SongItems.PROTISSIUM_SONG);
+	// WEAPONRY
+	public static final RegistryObject<Item> STUBBY_AXE = ITEMS.register("stubby_axe", () -> Weaponry.STUBBY_AXE);
 
+	// BLACKSMITHS
+	public static final RegistryObject<Item> IRON_BLACKSMITH_HAMMER = ITEMS.register("iron_blacksmith_hammer", () -> Weaponry.IRON_BLACKSMITH_HAMMER);
+	public static final RegistryObject<Item> DIAMOND_BLACKSMITH_HAMMER = ITEMS.register("diamond_blacksmith_hammer", () -> Weaponry.DIAMOND_BLACKSMITH_HAMMER);
 }
