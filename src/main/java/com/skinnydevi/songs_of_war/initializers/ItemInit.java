@@ -14,8 +14,14 @@ public class ItemInit {
 
 	// WEAPONRY
 	public static final RegistryObject<Item> STUBBY_AXE = ITEMS.register("stubby_axe", () -> Weaponry.STUBBY_AXE);
+	public static final RegistryObject<Item> IRON_FORGED_SWORD = ITEMS.register("iron_forged_sword",
+			() -> Weaponry.IRON_FORGED_SWORD);
+	public static final RegistryObject<Item> DIAMOND_FORGED_SWORD = ITEMS.register("diamond_forged_sword",
+			() -> Weaponry.DIAMOND_FORGED_SWORD);
 
 	// BLACKSMITHS
-	public static final RegistryObject<Item> IRON_BLACKSMITH_HAMMER = ITEMS.register("iron_blacksmith_hammer", () -> Weaponry.IRON_BLACKSMITH_HAMMER);
-	public static final RegistryObject<Item> DIAMOND_BLACKSMITH_HAMMER = ITEMS.register("diamond_blacksmith_hammer", () -> Weaponry.DIAMOND_BLACKSMITH_HAMMER);
+	public static final RegistryObject<Item> IRON_BLACKSMITH_HAMMER = ITEMS.register("iron_blacksmith_hammer",
+			() -> Weaponry.IRON_BLACKSMITH_HAMMER);
+	public static final RegistryObject<Item> DIAMOND_BLACKSMITH_HAMMER = ITEMS.register("diamond_blacksmith_hammer",
+			() -> Weaponry.DIAMOND_BLACKSMITH_HAMMER);
 }

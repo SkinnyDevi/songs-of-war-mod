@@ -1,11 +1,9 @@
 package com.skinnydevi.songs_of_war.data.generators;
 
 import com.skinnydevi.songs_of_war.SongsOfWarMod;
-import com.skinnydevi.songs_of_war.data.generators.client.SOWItemModelProvider;
 import com.skinnydevi.songs_of_war.data.generators.lang.EN_US_LangProvider;
 
 import net.minecraft.data.DataGenerator;
-import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
@@ -18,7 +16,7 @@ public class ResourceGenerator {
 	@SubscribeEvent
 	public static void gatherData(GatherDataEvent event) {
 		DataGenerator gen = event.getGenerator();
-		ExistingFileHelper fileHelper = event.getExistingFileHelper();
+		// ExistingFileHelper fileHelper = event.getExistingFileHelper();
 
 		if (event.includeServer()) {
 			// Recipes
@@ -29,7 +27,7 @@ public class ResourceGenerator {
 			// gen.addProvider(new WaterHeatModBlockStateProvider(gen, fileHelper));
 
 			// Items
-			gen.addProvider(true, new SOWItemModelProvider(gen, fileHelper));
+			// gen.addProvider(true, new SOWItemModelProvider(gen, fileHelper));
 
 			// Language Providers
 			gen.addProvider(true, new EN_US_LangProvider(gen));

@@ -23,6 +23,10 @@ public class EN_US_LangProvider extends LanguageProvider {
 
 		// Weapons
 		add(ItemInit.STUBBY_AXE.get(), "Stubby Axe");
+		add(ItemInit.IRON_FORGED_SWORD.get(), "Iron Forged Sword");
+		add(ItemInit.DIAMOND_FORGED_SWORD.get(), "Diamond Forged Sword");
+
+		// Blacksmiths
 		add(ItemInit.IRON_BLACKSMITH_HAMMER.get(), "Blacksmith's Iron Hammer");
 		add(ItemInit.DIAMOND_BLACKSMITH_HAMMER.get(), "Blacksmith's Diamond Hammer");
 	}
