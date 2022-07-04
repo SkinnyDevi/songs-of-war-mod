@@ -1,12 +1,16 @@
 package com.skinnydevi.songs_of_war;
 
 import com.mojang.logging.LogUtils;
+
 import com.skinnydevi.songs_of_war.common.items.itemgroups.ForgeryTab;
 import com.skinnydevi.songs_of_war.common.items.itemgroups.WeaponryTab;
+import com.skinnydevi.songs_of_war.initializers.BlockEntityInit;
 import com.skinnydevi.songs_of_war.initializers.BlockInit;
 import com.skinnydevi.songs_of_war.initializers.ItemInit;
+import com.skinnydevi.songs_of_war.initializers.MenuTypeInit;
 
 import net.minecraft.world.item.CreativeModeTab;
+
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -29,6 +33,8 @@ public class SongsOfWarMod {
 
 		ItemInit.ITEMS.register(modBus);
 		BlockInit.BLOCKS.register(modBus);
+		BlockEntityInit.BLOCK_ENTITIES.register(modBus);
+		MenuTypeInit.MENUS.register(modBus);
 
 		modBus.addListener(this::preInit);
 		modBus.addListener(this::preInitClient);
@@ -43,6 +49,7 @@ public class SongsOfWarMod {
 
 	private void preInitClient(final FMLClientSetupEvent event) {
 		LOGGER.debug("Starting PreInitClient for Songs Of War...");
+		MenuTypeInit.registerScreens();
 		// Overlays
 	}
 }
