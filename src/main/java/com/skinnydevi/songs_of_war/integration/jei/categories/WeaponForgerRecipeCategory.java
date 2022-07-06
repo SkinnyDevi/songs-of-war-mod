@@ -20,6 +20,13 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 
+/**
+ * Weapon Forger Recipe Category for JEI.
+ * <p>
+ * To be primarily used for {@code Weaponry}'s weapon's crafting recipes.
+ * 
+ * @see com.skinnydevi.songs_of_war.common.items.Weaponry
+ */
 public class WeaponForgerRecipeCategory implements IRecipeCategory<WeaponForgerRecipe> {
 	public final static ResourceLocation UID = new ResourceLocation(SongsOfWarMod.MOD_ID, "weapon_forging");
 	public final static ResourceLocation TEXTURE = new ResourceLocation(SongsOfWarMod.MOD_ID,

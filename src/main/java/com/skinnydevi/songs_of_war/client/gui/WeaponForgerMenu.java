@@ -18,6 +18,9 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
 
+/**
+ * In charge of handling the Weapon Forger's Block Entity menu slots.
+ */
 public class WeaponForgerMenu extends AbstractContainerMenu {
 	private final WeaponForgerBlockEntity blockEntity;
 	private final Level level;
@@ -66,6 +69,7 @@ public class WeaponForgerMenu extends AbstractContainerMenu {
 
 	private static final int BE_INVENTORY_SLOT_COUNT = 26;
 
+	// Credit to disieben07 for the logic of the method.
 	@Override
 	public ItemStack quickMoveStack(Player playerIn, int index) {
 		Slot sourceSlot = slots.get(index);
@@ -109,7 +113,7 @@ public class WeaponForgerMenu extends AbstractContainerMenu {
 				pPlayer, BlockInit.WEAPON_FORGER.get());
 	}
 
-	// Adds a working slot to the inventory section of our GUI
+	/** Adds a working inventory section to our GUI */
 	private void addPlayerInventory(Inventory playerInventory) {
 		for (int y = 0; y < PLAYER_INVENTORY_ROW_COUNT; y++) {
 			for (int x = 0; x < PLAYER_INVENTORY_COLUMN_COUNT; x++) {
@@ -120,7 +124,7 @@ public class WeaponForgerMenu extends AbstractContainerMenu {
 		}
 	}
 
-	// Adds a working slot to the hotbar section of our GUI
+	/** Adds a working hotbar section to our GUI */
 	private void addPlayerHotbar(Inventory playerInventory) {
 		for (int x = 0; x < HOTBAR_SLOT_COUNT; x++) {
 			this.addSlot(new Slot(playerInventory, x, PLAYER_INVENTORY_UI_X + (x * SLOT_SIZE),

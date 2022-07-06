@@ -34,6 +34,9 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 import net.minecraftforge.network.NetworkHooks;
 
+/**
+ * The main Weapon Forger block.
+ */
 public class WeaponForger extends BaseEntityBlock {
 	public static final DirectionProperty FACING = BlockStateProperties.FACING;
 

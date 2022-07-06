@@ -30,6 +30,30 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
 
+/**
+ * Custom copy of the native {@code ShapedRecipeBuilder} to generate dynamically
+ * the Weapon Forger's different recipes.
+ * <p>
+ * It uses the same principles as the {@code ShapedRecipeBuilder}, where you:
+ * <ul>
+ * 
+ * <li>Define the result</li>
+ * 
+ * <li>Define identifiers corresponding to an item in the
+ * crafting recipe, a 5x5 crafting pattern
+ * {@code (must be always 5 characters long and
+ *  5 rows)}</li>
+ * 
+ * <li>Define how it is unlocked (this does not affect if the recipe is locked
+ * early game or not)</li>
+ * <li>Save the recipe</li>
+ * 
+ * </ul>
+ * <p>
+ * 
+ * @see SOWRecipeProvider
+ * 
+ */
 public class WeaponForgingShapedRecipeBuilder implements RecipeBuilder {
 	private final Item result;
 	private final int count;

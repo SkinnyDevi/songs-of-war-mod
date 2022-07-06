@@ -26,6 +26,7 @@ public class WeaponForgerGui extends AbstractContainerScreen<WeaponForgerMenu> {
 			Component component) {
 		super(menu, inv, component);
 
+		// Very important to assign this here to make it responsive.
 		this.imageWidth = GUI_WIDTH;
 		this.imageHeight = GUI_HEIGHT;
 	}

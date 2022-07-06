@@ -6,22 +6,10 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tiers;
 
+/**
+ * Main class that defines all Songs Of War weapons.
+ */
 public class Weaponry {
-	private static Item.Properties getWeaponProps(int durability) {
-		return new Item.Properties().tab(SongsOfWarMod.WEAPONRY_TAB).defaultDurability(durability);
-	}
-
-	private static Item.Properties getForgerProps(int durability) {
-		return new Item.Properties().tab(SongsOfWarMod.FORGERY_TAB).defaultDurability(durability);
-	}
-
-	private static int getDamage(int damage) {
-		return damage - 3;
-	}
-
-	private static float getUseSpeed(float speed) {
-		return speed - 4F;
-	}
 
 	// WEAPONS
 	public static final SwordItem STUBBY_AXE = new SwordItem(Tiers.IRON, getDamage(10), getUseSpeed(1),
@@ -49,7 +37,25 @@ public class Weaponry {
 	public static final SwordItem VOLTARIS_STAFF = new SwordItem(Tiers.NETHERITE, getDamage(19), getUseSpeed(2.1F),
 			getWeaponProps(1200));
 
-	// BLACKSMITHS
+	// BLACKSMITH'S TOOLS
 	public static final SwordItem IRON_BLACKSMITH_HAMMER = new SwordItem(Tiers.IRON, 0, 0, getForgerProps(650));
 	public static final SwordItem DIAMOND_BLACKSMITH_HAMMER = new SwordItem(Tiers.DIAMOND, 1, 0, getForgerProps(1700));
+
+	// Helper Methods
+
+	private static Item.Properties getWeaponProps(int durability) {
+		return new Item.Properties().tab(SongsOfWarMod.WEAPONRY_TAB).defaultDurability(durability);
+	}
+
+	private static Item.Properties getForgerProps(int durability) {
+		return new Item.Properties().tab(SongsOfWarMod.FORGERY_TAB).defaultDurability(durability);
+	}
+
+	private static int getDamage(int damage) {
+		return damage - 3;
+	}
+
+	private static float getUseSpeed(float speed) {
+		return speed - 4F;
+	}
 }

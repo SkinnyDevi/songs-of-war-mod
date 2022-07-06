@@ -5,6 +5,9 @@ import com.skinnydevi.songs_of_war.common.items.Weaponry;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 
+/**
+ * Songs Of War Forgery Creative Tab.
+ */
 public class ForgeryTab extends CreativeModeTab {
 
 	public ForgeryTab() {

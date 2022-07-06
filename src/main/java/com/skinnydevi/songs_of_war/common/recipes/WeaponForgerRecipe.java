@@ -23,6 +23,10 @@ import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.item.crafting.ShapedRecipe;
 import net.minecraft.world.level.Level;
 
+/**
+ * Declaration of a new Recipe and RecipeType for the {@code WeaponForger}
+ * craftings.
+ */
 public class WeaponForgerRecipe implements Recipe<SimpleContainer> {
 
 	private final ResourceLocation id;
@@ -36,6 +40,12 @@ public class WeaponForgerRecipe implements Recipe<SimpleContainer> {
 		this.result = result;
 	}
 
+	/**
+	 * Check if the recipe passed with an inventory has a valid recipe.
+	 * 
+	 * In this case, the inventory is the {@code WeaponForgerBlockEntity}'s crafting
+	 * slots.
+	 */
 	@Override
 	public boolean matches(SimpleContainer inv, Level level) {
 		for (int i = 0; i < inv.getContainerSize() - 1; i++) {
@@ -86,11 +96,17 @@ public class WeaponForgerRecipe implements Recipe<SimpleContainer> {
 		return this.ingredients;
 	}
 
+	/**
+	 * Defines the RecipeType for the {@code WeaponForgerRecipe} recipes.
+	 */
 	public static class Type implements RecipeType<WeaponForgerRecipe> {
 		public static final RecipeType<WeaponForgerRecipe> INSTANCE = new Type();
 		public static final String ID = "weapon_forging";
 	}
 
+	/**
+	 * Defines the RecipeSerializer for the {@code WeaponForgerRecipe} recipes.
+	 */
 	public static class Serializer implements RecipeSerializer<WeaponForgerRecipe> {
 		public static final Serializer INSTANCE = new Serializer();
 		public static final ResourceLocation ID = new ResourceLocation(SongsOfWarMod.MOD_ID, "weapon_forging");
@@ -101,9 +117,12 @@ public class WeaponForgerRecipe implements Recipe<SimpleContainer> {
 			JsonObject recipeKeys = GsonHelper.getAsJsonObject(json, "key");
 
 			HashMap<Integer, Character> existingKeys = parsePattern(GsonHelper.getAsJsonArray(json, "pattern"));
+			// Initializes an empty recipe.
 			NonNullList<Ingredient> ingredients = NonNullList.withSize(25, Ingredient.EMPTY);
 
 			for (int i = 0; i < existingKeys.size(); i++) {
+				// Adds the item to the recipe corresponding to its position in the crafting
+				// recipe.
 				if (existingKeys.get(i) != null)
 					ingredients.set(i, Ingredient.fromJson(recipeKeys.get(existingKeys.get(i).toString())));
 			}
@@ -131,6 +150,12 @@ public class WeaponForgerRecipe implements Recipe<SimpleContainer> {
 			buf.writeItemStack(recipe.getResultItem(), false);
 		}
 
+		/**
+		 * Returns a list with the {@code slotIndex} of the inventory and the
+		 * {@code Key} corresponding to an {@code Item}.
+		 * 
+		 * @return HashMap
+		 */
 		private HashMap<Integer, Character> parsePattern(JsonArray rawPattern) {
 			HashMap<Integer, Character> existingKeys = new HashMap<>();
 

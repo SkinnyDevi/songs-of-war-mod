@@ -8,6 +8,9 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
 
+/**
+ * Weapon Forger result slot that crafts the desired item on pickup.
+ */
 public class CustomResultSlot extends SlotItemHandler {
 	private final WeaponForgerBlockEntity blockEntity;
 

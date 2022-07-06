@@ -12,6 +12,9 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 
+/**
+ * Main Data Generator class for various generators.
+ */
 @Mod.EventBusSubscriber(modid = SongsOfWarMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ResourceGenerator {
 	public ResourceGenerator() {

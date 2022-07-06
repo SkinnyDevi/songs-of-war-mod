@@ -3,6 +3,7 @@ package com.skinnydevi.songs_of_war.common.blocks.entity;
 import java.util.Optional;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -31,6 +32,11 @@ import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 
+/**
+ * The corresponding Block Entity for the Weapon Forger block.
+ * <p>
+ * Here takes place the recipe checking on the {@code tick} method.
+ */
 public class WeaponForgerBlockEntity extends BlockEntity implements MenuProvider {
 	private final ItemStackHandler itemHandler = new ItemStackHandler(26) {
 		@Override
@@ -57,10 +63,9 @@ public class WeaponForgerBlockEntity extends BlockEntity implements MenuProvider
 
 	@Nonnull
 	@Override
-	public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @javax.annotation.Nullable Direction side) {
-		if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
+	public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @Nullable Direction side) {
+		if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY)
 			return lazyItemHandler.cast();
-		}
 
 		return super.getCapability(cap, side);
 	}
@@ -89,6 +94,12 @@ public class WeaponForgerBlockEntity extends BlockEntity implements MenuProvider
 		itemHandler.deserializeNBT(nbt.getCompound("inventory"));
 	}
 
+	/**
+	 * Drops all items on the Weapon Forger's inventory.
+	 * <p>
+	 * Mainly used for the {@code onRemove} method in the {@code WeaponForger}
+	 * block.
+	 */
 	public void drops() {
 		SimpleContainer inventory = new SimpleContainer(itemHandler.getSlots());
 		for (int i = 0; i < itemHandler.getSlots(); i++)
@@ -160,7 +171,5 @@ public class WeaponForgerBlockEntity extends BlockEntity implements MenuProvider
 
 	private static boolean canInsertItemIntoOutputSlot(SimpleContainer inventory, ItemStack result) {
 		return inventory.getItem(25).isEmpty();
-		// return inventory.getItem(25).getItem() == result.getItem() ||
-		// inventory.getItem(25).isEmpty();
 	}
 }
