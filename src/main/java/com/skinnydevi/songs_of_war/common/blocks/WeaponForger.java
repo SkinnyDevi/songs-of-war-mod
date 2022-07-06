@@ -39,7 +39,7 @@ public class WeaponForger extends BaseEntityBlock {
 
 	public WeaponForger() {
 		super(BlockBehaviour.Properties.copy(Blocks.ANVIL).noOcclusion().requiresCorrectToolForDrops()
-				.sound(SoundType.METAL).destroyTime(0.25F));
+				.sound(SoundType.METAL).destroyTime(2F));
 	}
 
 	@Override

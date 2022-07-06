@@ -3,6 +3,7 @@ package com.skinnydevi.songs_of_war.data.generators;
 import com.skinnydevi.songs_of_war.SongsOfWarMod;
 import com.skinnydevi.songs_of_war.data.generators.client.SOWItemModelProvider;
 import com.skinnydevi.songs_of_war.data.generators.lang.EN_US_LangProvider;
+import com.skinnydevi.songs_of_war.data.generators.server.SOWLootTableProvider;
 import com.skinnydevi.songs_of_war.data.generators.server.SOWRecipeProvider;
 
 import net.minecraft.data.DataGenerator;
@@ -24,6 +25,9 @@ public class ResourceGenerator {
 		if (event.includeServer()) {
 			// Recipes
 			gen.addProvider(true, new SOWRecipeProvider(gen));
+
+			// Loot Tables
+			gen.addProvider(true, new SOWLootTableProvider(gen));
 		}
 		if (event.includeClient()) {
 			// BlockStates
