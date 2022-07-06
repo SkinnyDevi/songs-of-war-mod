@@ -19,6 +19,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.Mirror;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.Rotation;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -30,13 +31,15 @@ import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+
 import net.minecraftforge.network.NetworkHooks;
 
 public class WeaponForger extends BaseEntityBlock {
 	public static final DirectionProperty FACING = BlockStateProperties.FACING;
 
 	public WeaponForger() {
-		super(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion());
+		super(BlockBehaviour.Properties.copy(Blocks.ANVIL).noOcclusion().requiresCorrectToolForDrops()
+				.sound(SoundType.METAL).destroyTime(0.25F));
 	}
 
 	@Override

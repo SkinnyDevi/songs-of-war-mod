@@ -57,6 +57,17 @@ public class SOWRecipeProvider extends RecipeProvider {
 	}
 
 	private void registerWeaponForgerRecipes(Consumer<FinishedRecipe> consumer) {
+		WeaponForgingShapedRecipeBuilder.shaped(ItemInit.STUBBY_AXE.get())
+				.define('S', Items.STICK)
+				.define('I', Items.IRON_INGOT)
+				.pattern("     ")
+				.pattern(" II  ")
+				.pattern(" ISI ")
+				.pattern(" SII ")
+				.pattern("S    ")
+				.unlockedBy("has_item", has(BlockInit.WEAPON_FORGER.get()))
+				.save(consumer, forgerIdMaker("stubby_axe"));
+
 		WeaponForgingShapedRecipeBuilder.shaped(ItemInit.IRON_FORGED_SWORD.get())
 				.define('S', Items.STICK)
 				.define('I', Items.IRON_INGOT)
@@ -68,16 +79,17 @@ public class SOWRecipeProvider extends RecipeProvider {
 				.unlockedBy("has_item", has(BlockInit.WEAPON_FORGER.get()))
 				.save(consumer, forgerIdMaker("iron_forged_sword"));
 
-		WeaponForgingShapedRecipeBuilder.shaped(ItemInit.STUBBY_AXE.get())
+		WeaponForgingShapedRecipeBuilder.shaped(ItemInit.DIAMOND_FORGED_SWORD.get())
 				.define('S', Items.STICK)
-				.define('I', Items.IRON_INGOT)
+				.define('D', Items.DIAMOND)
+				.pattern("    D")
+				.pattern(" D D ")
+				.pattern("  D  ")
+				.pattern(" S D ")
 				.pattern("     ")
-				.pattern(" II  ")
-				.pattern(" ISI ")
-				.pattern(" SII ")
-				.pattern("S    ")
 				.unlockedBy("has_item", has(BlockInit.WEAPON_FORGER.get()))
-				.save(consumer, forgerIdMaker("stubby_axe"));
+				.save(consumer, forgerIdMaker("diamond_forged_sword"));
+
 	}
 
 	private static ResourceLocation idMaker(String recipeId) {
