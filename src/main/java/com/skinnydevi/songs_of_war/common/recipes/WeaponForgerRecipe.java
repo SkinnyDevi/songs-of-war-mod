@@ -87,7 +87,7 @@ public class WeaponForgerRecipe implements Recipe<SimpleContainer> {
 	}
 
 	public static class Type implements RecipeType<WeaponForgerRecipe> {
-		public static final Type INSTANCE = new Type();
+		public static final RecipeType<WeaponForgerRecipe> INSTANCE = new Type();
 		public static final String ID = "weapon_forging";
 	}
 
