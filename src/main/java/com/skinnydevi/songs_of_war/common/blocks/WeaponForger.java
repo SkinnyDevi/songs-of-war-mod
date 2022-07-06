@@ -57,6 +57,7 @@ public class WeaponForger extends BaseEntityBlock {
 	}
 
 	@Override
+	@SuppressWarnings("deprecation")
 	public BlockState mirror(BlockState pState, Mirror pMirror) {
 		return pState.rotate(pMirror.getRotation(pState.getValue(FACING)));
 	}
@@ -74,6 +75,7 @@ public class WeaponForger extends BaseEntityBlock {
 	}
 
 	@Override
+	@SuppressWarnings("deprecation")
 	public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
 		if (pState.getBlock() != pNewState.getBlock()) {
 			BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
