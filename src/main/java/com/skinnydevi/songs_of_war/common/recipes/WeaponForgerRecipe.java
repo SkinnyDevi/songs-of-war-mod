@@ -98,7 +98,7 @@ public class WeaponForgerRecipe implements Recipe<SimpleContainer> {
 		@Override
 		public WeaponForgerRecipe fromJson(ResourceLocation id, JsonObject json) {
 			ItemStack result = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(json, "result"));
-			JsonObject recipeKeys = GsonHelper.getAsJsonObject(json, "keys");
+			JsonObject recipeKeys = GsonHelper.getAsJsonObject(json, "key");
 
 			HashMap<Integer, Character> existingKeys = parsePattern(GsonHelper.getAsJsonArray(json, "pattern"));
 			NonNullList<Ingredient> ingredients = NonNullList.withSize(25, Ingredient.EMPTY);
