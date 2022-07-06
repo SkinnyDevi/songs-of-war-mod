@@ -1,12 +1,14 @@
 package com.skinnydevi.songs_of_war.common.blocks.entity;
 
+import java.util.Optional;
+
 import javax.annotation.Nonnull;
 
 import org.jetbrains.annotations.NotNull;
 
 import com.skinnydevi.songs_of_war.client.gui.WeaponForgerMenu;
+import com.skinnydevi.songs_of_war.common.recipes.WeaponForgerRecipe;
 import com.skinnydevi.songs_of_war.initializers.BlockEntityInit;
-import com.skinnydevi.songs_of_war.initializers.ItemInit;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -19,7 +21,6 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -31,7 +32,12 @@ import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 
 public class WeaponForgerBlockEntity extends BlockEntity implements MenuProvider {
-	private final ItemStackHandler itemHandler=new ItemStackHandler(26){@Override protected void onContentsChanged(int slot){setChanged();};};
+	private final ItemStackHandler itemHandler = new ItemStackHandler(26) {
+		@Override
+		protected void onContentsChanged(int slot) {
+			setChanged();
+		};
+	};
 
 	private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
 
@@ -85,39 +91,76 @@ public class WeaponForgerBlockEntity extends BlockEntity implements MenuProvider
 
 	public void drops() {
 		SimpleContainer inventory = new SimpleContainer(itemHandler.getSlots());
-		for (int i = 0; i < itemHandler.getSlots(); i++) 
+		for (int i = 0; i < itemHandler.getSlots(); i++)
 			inventory.setItem(i, itemHandler.getStackInSlot(i));
-		
 
 		Containers.dropContents(this.level, this.worldPosition, inventory);
 	}
 
 	public static void tick(Level pLevel, BlockPos pPos, BlockState pState, WeaponForgerBlockEntity pBlockEntity) {
-		if (hasRecipe(pBlockEntity) && hasNotReachedStackLimit(pBlockEntity)) {
-			craftItem(pBlockEntity);
+		if (hasRecipe(pBlockEntity)) {
+			setChanged(pLevel, pPos, pState);
+			setResultPreview(pBlockEntity);
+		} else {
+			setChanged(pLevel, pPos, pState);
 		}
 	}
 
-	private static void craftItem(WeaponForgerBlockEntity entity) {
-		entity.itemHandler.extractItem(0, 1, false);
-		entity.itemHandler.extractItem(1, 1, false);
-		entity.itemHandler.extractItem(2, 1, false);
-
-		entity.itemHandler.setStackInSlot(25, new ItemStack(ItemInit.DEATHSINGER_SWORD.get(),
-				entity.itemHandler.getStackInSlot(25).getCount() + 1));
-	}
-
 	private static boolean hasRecipe(WeaponForgerBlockEntity entity) {
-		boolean hasDiamonds1 = entity.itemHandler.getStackInSlot(0).getItem() == Items.DIAMOND;
-		boolean hasDiamonds2 = entity.itemHandler.getStackInSlot(1).getItem() == Items.DIAMOND;
-		boolean hasDiamonds3 = entity.itemHandler.getStackInSlot(2).getItem() == Items.DIAMOND;
+		Level level = entity.level;
+		SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots());
 
-		return hasDiamonds1 && hasDiamonds2 && hasDiamonds3;
+		for (int i = 0; i < entity.itemHandler.getSlots(); i++)
+			inventory.setItem(i, entity.itemHandler.getStackInSlot(i));
+
+		Optional<WeaponForgerRecipe> match = level.getRecipeManager()
+				.getRecipeFor(WeaponForgerRecipe.Type.INSTANCE, inventory, level);
+
+		if (!match.isPresent())
+			clearResultPreview(entity);
+
+		return match.isPresent()
+				&& canInsertItemIntoOutputSlot(inventory, match.get().getResultItem());
 	}
 
-	private static boolean hasNotReachedStackLimit(WeaponForgerBlockEntity entity) {
-		return entity.itemHandler.getStackInSlot(25).getCount() < entity.itemHandler.getStackInSlot(25)
-				.getMaxStackSize();
+	private static void clearResultPreview(WeaponForgerBlockEntity entity) {
+		if (!entity.itemHandler.getStackInSlot(25).isEmpty())
+			entity.itemHandler.setStackInSlot(25, ItemStack.EMPTY);
 	}
 
+	private static void setResultPreview(WeaponForgerBlockEntity entity) {
+		Optional<WeaponForgerRecipe> match = recipeMatches(entity);
+		if (entity.itemHandler.getStackInSlot(25).isEmpty() && match.isPresent()) {
+			entity.itemHandler.setStackInSlot(25, new ItemStack(match.get().getResultItem().getItem(), 1));
+		}
+	}
+
+	public static void craftItem(WeaponForgerBlockEntity entity) {
+		Optional<WeaponForgerRecipe> match = recipeMatches(entity);
+
+		if (match.isPresent()) {
+			for (int i = 0; i < 25; i++)
+				entity.itemHandler.extractItem(i, 1, false);
+
+			entity.itemHandler.setStackInSlot(25, new ItemStack(match.get().getResultItem().getItem(),
+					entity.itemHandler.getStackInSlot(25).getCount() + 1));
+		}
+	}
+
+	private static Optional<WeaponForgerRecipe> recipeMatches(WeaponForgerBlockEntity entity) {
+		Level level = entity.level;
+		SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots());
+		for (int i = 0; i < entity.itemHandler.getSlots(); i++) {
+			inventory.setItem(i, entity.itemHandler.getStackInSlot(i));
+		}
+
+		return level.getRecipeManager()
+				.getRecipeFor(WeaponForgerRecipe.Type.INSTANCE, inventory, level);
+	}
+
+	private static boolean canInsertItemIntoOutputSlot(SimpleContainer inventory, ItemStack result) {
+		return inventory.getItem(25).isEmpty();
+		// return inventory.getItem(25).getItem() == result.getItem() ||
+		// inventory.getItem(25).isEmpty();
+	}
 }

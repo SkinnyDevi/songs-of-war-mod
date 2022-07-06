@@ -52,7 +52,7 @@ public class WeaponForgerMenu extends AbstractContainerMenu {
 					slotIndex++;
 				}
 			}
-			this.addSlot(new CustomResultSlot(handler, slotIndex++, 142, 61));
+			this.addSlot(new CustomResultSlot(handler, slotIndex++, 142, 61, this.blockEntity));
 		});
 	}
 

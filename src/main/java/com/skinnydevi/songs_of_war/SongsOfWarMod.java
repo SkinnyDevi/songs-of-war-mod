@@ -8,6 +8,7 @@ import com.skinnydevi.songs_of_war.initializers.BlockEntityInit;
 import com.skinnydevi.songs_of_war.initializers.BlockInit;
 import com.skinnydevi.songs_of_war.initializers.ItemInit;
 import com.skinnydevi.songs_of_war.initializers.MenuTypeInit;
+import com.skinnydevi.songs_of_war.initializers.RecipeInit;
 
 import net.minecraft.world.item.CreativeModeTab;
 
@@ -35,6 +36,7 @@ public class SongsOfWarMod {
 		BlockInit.BLOCKS.register(modBus);
 		BlockEntityInit.BLOCK_ENTITIES.register(modBus);
 		MenuTypeInit.MENUS.register(modBus);
+		RecipeInit.SERIALIZERS.register(modBus);
 
 		modBus.addListener(this::preInit);
 		modBus.addListener(this::preInitClient);

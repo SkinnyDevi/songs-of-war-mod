@@ -22,9 +22,9 @@ public class WeaponForgerGui extends AbstractContainerScreen<WeaponForgerMenu> {
 	private static final int GUI_HEIGHT = 222;
 
 	public WeaponForgerGui(
-			WeaponForgerMenu p_97741_, Inventory p_97742_,
-			Component p_97743_) {
-		super(p_97741_, p_97742_, p_97743_);
+			WeaponForgerMenu menu, Inventory inv,
+			Component component) {
+		super(menu, inv, component);
 
 		this.imageWidth = GUI_WIDTH;
 		this.imageHeight = GUI_HEIGHT;
