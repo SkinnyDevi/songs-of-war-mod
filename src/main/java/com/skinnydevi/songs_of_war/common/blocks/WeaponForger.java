@@ -40,6 +40,9 @@ import net.minecraftforge.network.NetworkHooks;
 public class WeaponForger extends BaseEntityBlock {
 	public static final DirectionProperty FACING = BlockStateProperties.FACING;
 
+	/**
+	 * The main Weapon Forger block.
+	 */
 	public WeaponForger() {
 		super(BlockBehaviour.Properties.copy(Blocks.ANVIL).noOcclusion().requiresCorrectToolForDrops()
 				.sound(SoundType.METAL).destroyTime(2F));

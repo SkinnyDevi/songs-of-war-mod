@@ -30,10 +30,16 @@ public class WeaponForgerMenu extends AbstractContainerMenu {
 	private static final int PLAYER_INVENTORY_UI_Y = 140;
 	private static final int PLAYER_HOTBAR_UI_Y = 198;
 
+	/**
+	 * In charge of handling the Weapon Forger's Block Entity menu slots.
+	 */
 	public WeaponForgerMenu(int containerId, Inventory inv, FriendlyByteBuf fbbuf) {
 		this(containerId, inv, inv.player.level.getBlockEntity(fbbuf.readBlockPos()));
 	}
 
+	/**
+	 * In charge of handling the Weapon Forger's Block Entity menu slots.
+	 */
 	public WeaponForgerMenu(int containerId, Inventory inv, BlockEntity entity) {
 		super(MenuTypeInit.WEAPON_FORGER_MENU.get(), containerId);
 		checkContainerSize(inv, 26);

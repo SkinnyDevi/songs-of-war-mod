@@ -47,8 +47,13 @@ public class WeaponForgerBlockEntity extends BlockEntity implements MenuProvider
 
 	private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
 
-	public WeaponForgerBlockEntity(BlockPos p_155229_, BlockState p_155230_) {
-		super(BlockEntityInit.WEAPON_FORGER_BLOCK_ENTITY.get(), p_155229_, p_155230_);
+	/**
+	 * The corresponding Block Entity for the Weapon Forger block.
+	 * <p>
+	 * Here takes place the recipe checking on the {@code tick} method.
+	 */
+	public WeaponForgerBlockEntity(BlockPos pos, BlockState state) {
+		super(BlockEntityInit.WEAPON_FORGER_BLOCK_ENTITY.get(), pos, state);
 	}
 
 	@Override

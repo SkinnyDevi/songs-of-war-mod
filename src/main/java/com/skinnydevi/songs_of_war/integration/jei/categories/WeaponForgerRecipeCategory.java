@@ -35,6 +35,13 @@ public class WeaponForgerRecipeCategory implements IRecipeCategory<WeaponForgerR
 	private final IDrawable background;
 	private final IDrawable icon;
 
+	/**
+	 * Weapon Forger Recipe Category for JEI.
+	 * <p>
+	 * To be primarily used for {@code Weaponry}'s weapon's crafting recipes.
+	 * 
+	 * @see com.skinnydevi.songs_of_war.common.items.Weaponry
+	 */
 	public WeaponForgerRecipeCategory(IGuiHelper helper) {
 		this.background = helper.createDrawable(TEXTURE, 0, 0, 176, 124);
 		this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM_STACK,

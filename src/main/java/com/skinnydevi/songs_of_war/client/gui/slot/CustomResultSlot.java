@@ -14,6 +14,9 @@ import net.minecraftforge.items.SlotItemHandler;
 public class CustomResultSlot extends SlotItemHandler {
 	private final WeaponForgerBlockEntity blockEntity;
 
+	/**
+	 * Weapon Forger result slot that crafts the desired item on pickup.
+	 */
 	public CustomResultSlot(IItemHandler itemHandler, int index, int xPosition, int yPosition,
 			WeaponForgerBlockEntity entity) {
 		super(itemHandler, index, xPosition, yPosition);

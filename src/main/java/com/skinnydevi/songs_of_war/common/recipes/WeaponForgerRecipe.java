@@ -33,6 +33,10 @@ public class WeaponForgerRecipe implements Recipe<SimpleContainer> {
 	private final NonNullList<Ingredient> ingredients;
 	private final ItemStack result;
 
+	/**
+	 * Declaration of a new Recipe and RecipeType for the {@code WeaponForger}
+	 * craftings.
+	 */
 	public WeaponForgerRecipe(ResourceLocation id, NonNullList<Ingredient> ingredients,
 			ItemStack result) {
 		this.id = id;
