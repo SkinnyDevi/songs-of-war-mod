@@ -19,6 +19,14 @@ public class Weaponry {
 			getWeaponProps(350));
 	public static final SwordItem DIAMOND_FORGED_SWORD = new SwordItem(Tiers.DIAMOND, getDamage(9), getUseSpeed(2F),
 			getWeaponProps(1650));
+	public static final SwordItem IRON_BATTLE_AXE = new SwordItem(Tiers.IRON, getDamage(12), getUseSpeed(1.2F),
+			getWeaponProps(450));
+	public static final SwordItem DIAMOND_BATTLE_AXE = new SwordItem(Tiers.DIAMOND, getDamage(15), getUseSpeed(1.3F),
+			getWeaponProps(1100));
+	public static final SwordItem IRON_BLADE = new SwordItem(Tiers.IRON, getDamage(8), getUseSpeed(2.3F),
+			getWeaponProps(150));
+	public static final SwordItem DIAMOND_BLADE = new SwordItem(Tiers.DIAMOND, getDamage(11), getUseSpeed(2.5F),
+			getWeaponProps(400));
 
 	public static final SwordItem DEATHSINGER_SWORD = new SwordItem(Tiers.NETHERITE, getDamage(24), getUseSpeed(2F),
 			getWeaponProps(2400));

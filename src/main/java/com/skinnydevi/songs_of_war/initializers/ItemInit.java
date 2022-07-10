@@ -18,6 +18,14 @@ public class ItemInit {
 			() -> Weaponry.IRON_FORGED_SWORD);
 	public static final RegistryObject<Item> DIAMOND_FORGED_SWORD = ITEMS.register("diamond_forged_sword",
 			() -> Weaponry.DIAMOND_FORGED_SWORD);
+	public static final RegistryObject<Item> IRON_BATTLE_AXE = ITEMS.register("iron_battle_axe",
+			() -> Weaponry.IRON_BATTLE_AXE);
+	public static final RegistryObject<Item> DIAMOND_BATTLE_AXE = ITEMS.register("diamond_battle_axe",
+			() -> Weaponry.DIAMOND_BATTLE_AXE);
+	public static final RegistryObject<Item> IRON_BLADE = ITEMS.register("iron_blade",
+			() -> Weaponry.IRON_BLADE);
+	public static final RegistryObject<Item> DIAMOND_BLADE = ITEMS.register("diamond_blade",
+			() -> Weaponry.DIAMOND_BLADE);
 
 	public static final RegistryObject<Item> NESTORIS_STAFF = ITEMS.register("nestoris_staff",
 			() -> Weaponry.NESTORIS_STAFF);
