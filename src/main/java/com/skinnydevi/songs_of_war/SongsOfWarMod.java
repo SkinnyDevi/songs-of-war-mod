@@ -24,7 +24,7 @@ import org.slf4j.Logger;
 @Mod(SongsOfWarMod.MOD_ID)
 public class SongsOfWarMod {
 	public static final String MOD_ID = "songs_of_war";
-	private static final Logger LOGGER = LogUtils.getLogger();
+	public static final Logger LOGGER = LogUtils.getLogger();
 
 	public static final CreativeModeTab WEAPONRY_TAB = new WeaponryTab();
 	public static final CreativeModeTab FORGERY_TAB = new ForgeryTab();

@@ -19,6 +19,7 @@ import mezz.jei.api.recipe.category.IRecipeCategory;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.Ingredient;
 
 /**
  * Weapon Forger Recipe Category for JEI.
@@ -78,6 +79,7 @@ public class WeaponForgerRecipeCategory implements IRecipeCategory<WeaponForgerR
 		int xStart = 16;
 		int yStart = 18;
 		final int slotSize = 18;
+
 		int slotIndex = 0;
 		for (int y = 0; y < 5; y++) {
 			for (int x = 0; x < 5; x++) {

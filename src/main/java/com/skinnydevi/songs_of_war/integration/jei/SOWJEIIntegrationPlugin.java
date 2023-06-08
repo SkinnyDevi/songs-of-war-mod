@@ -9,6 +9,7 @@ import com.skinnydevi.songs_of_war.integration.jei.categories.WeaponForgerRecipe
 
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
+import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.registration.IRecipeCategoryRegistration;
 import mezz.jei.api.registration.IRecipeRegistration;
 
@@ -18,15 +19,18 @@ import net.minecraft.world.item.crafting.RecipeManager;
 
 @JeiPlugin
 public class SOWJEIIntegrationPlugin implements IModPlugin {
+	public static final ResourceLocation UID = new ResourceLocation(SongsOfWarMod.MOD_ID, "jei_plugin");
 
 	@Override
 	public ResourceLocation getPluginUid() {
-		return new ResourceLocation(SongsOfWarMod.MOD_ID, "jei_plugin");
+		return UID;
 	}
 
 	@Override
 	public void registerCategories(IRecipeCategoryRegistration registration) {
-		registration.addRecipeCategories(new WeaponForgerRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+		IGuiHelper helper = registration.getJeiHelpers().getGuiHelper();
+
+		registration.addRecipeCategories(new WeaponForgerRecipeCategory(helper));
 	}
 
 	@Override
@@ -34,7 +38,6 @@ public class SOWJEIIntegrationPlugin implements IModPlugin {
 		Minecraft instance = Minecraft.getInstance();
 		RecipeManager rm = Objects.requireNonNull(instance.level).getRecipeManager();
 
-		List<WeaponForgerRecipe> recipes = rm.getAllRecipesFor(WeaponForgerRecipe.Type.INSTANCE);
-		registration.addRecipes(SOWJEIRecipeTypes.WEAPON_FORGING, recipes);
+		registration.addRecipes(SOWJEIRecipeTypes.WEAPON_FORGING, rm.getAllRecipesFor(WeaponForgerRecipe.Type.INSTANCE));
 	}
 }
