@@ -26,6 +26,14 @@ public class ItemInit {
 			() -> Weaponry.IRON_BLADE);
 	public static final RegistryObject<Item> DIAMOND_BLADE = ITEMS.register("diamond_blade",
 			() -> Weaponry.DIAMOND_BLADE);
+	public static final RegistryObject<Item> STONE_DAGGER = ITEMS.register("stone_dagger",
+			() -> Weaponry.STONE_DAGGER);
+	public static final RegistryObject<Item> IRON_DAGGER = ITEMS.register("iron_dagger",
+			() -> Weaponry.IRON_DAGGER);
+	public static final RegistryObject<Item> DIAMOND_DAGGER = ITEMS.register("diamond_dagger",
+			() -> Weaponry.DIAMOND_DAGGER);
+	public static final RegistryObject<Item> BLADED_STAFF = ITEMS.register("bladed_staff",
+			() -> Weaponry.BLADED_STAFF);
 
 	public static final RegistryObject<Item> NESTORIS_STAFF = ITEMS.register("nestoris_staff",
 			() -> Weaponry.NESTORIS_STAFF);

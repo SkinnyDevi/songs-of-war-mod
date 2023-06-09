@@ -3,15 +3,13 @@ package com.skinnydevi.songs_of_war.data.generators.server;
 import java.util.function.Consumer;
 
 import com.skinnydevi.songs_of_war.SongsOfWarMod;
+import com.skinnydevi.songs_of_war.common.items.Weaponry;
+import com.skinnydevi.songs_of_war.data.generators.server.recipes.WeaponForgingShapedRecipeBuilder;
 import com.skinnydevi.songs_of_war.initializers.BlockInit;
 import com.skinnydevi.songs_of_war.initializers.ItemInit;
 
-import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.data.recipes.RecipeCategory;
-import net.minecraft.data.recipes.RecipeProvider;
-import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
@@ -56,10 +54,34 @@ public class SOWRecipeProvider extends RecipeProvider {
 				.pattern("SSS")
 				.unlockedBy("has_item", has(Blocks.ANVIL))
 				.save(consumer, idMaker("weapon_forger_recipe"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ItemInit.STONE_DAGGER.get())
+				.define('S', Items.STONE)
+				.define('I', Items.STICK)
+				.pattern(" S")
+				.pattern("I ")
+				.unlockedBy("has_item", has(Items.STONE))
+				.save(consumer, idMaker("stone_dagger_recipe"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ItemInit.IRON_DAGGER.get())
+				.define('I', Items.IRON_INGOT)
+				.define('S', Items.STICK)
+				.pattern(" I")
+				.pattern("S ")
+				.unlockedBy("has_item", has(Items.IRON_INGOT))
+				.save(consumer, idMaker("iron_dagger_recipe"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ItemInit.DIAMOND_DAGGER.get())
+				.define('D', Items.DIAMOND)
+				.define('S', Items.STICK)
+				.pattern(" D")
+				.pattern("S ")
+				.unlockedBy("has_item", has(Items.DIAMOND))
+				.save(consumer, idMaker("diamond_dagger_recipe"));
 	}
 
 	private void registerWeaponForgerRecipes(Consumer<FinishedRecipe> consumer) {
-		WeaponForgingShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ItemInit.STUBBY_AXE.get())
+		WeaponForgingShapedRecipeBuilder.shapedCombat(ItemInit.STUBBY_AXE.get())
 				.define('S', Items.STICK)
 				.define('I', Items.IRON_INGOT)
 				.pattern("     ")
@@ -70,7 +92,7 @@ public class SOWRecipeProvider extends RecipeProvider {
 				.unlockedBy("has_item", has(BlockInit.WEAPON_FORGER.get()))
 				.save(consumer, forgerIdMaker("stubby_axe"));
 
-		WeaponForgingShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ItemInit.IRON_FORGED_SWORD.get())
+		WeaponForgingShapedRecipeBuilder.shapedCombat(ItemInit.IRON_FORGED_SWORD.get())
 				.define('S', Items.STICK)
 				.define('I', Items.IRON_INGOT)
 				.pattern("    I")
@@ -81,7 +103,7 @@ public class SOWRecipeProvider extends RecipeProvider {
 				.unlockedBy("has_item", has(BlockInit.WEAPON_FORGER.get()))
 				.save(consumer, forgerIdMaker("iron_forged_sword"));
 
-		WeaponForgingShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ItemInit.DIAMOND_FORGED_SWORD.get())
+		WeaponForgingShapedRecipeBuilder.shapedCombat(ItemInit.DIAMOND_FORGED_SWORD.get())
 				.define('S', Items.STICK)
 				.define('D', Items.DIAMOND)
 				.pattern("    D")
@@ -92,7 +114,7 @@ public class SOWRecipeProvider extends RecipeProvider {
 				.unlockedBy("has_item", has(BlockInit.WEAPON_FORGER.get()))
 				.save(consumer, forgerIdMaker("diamond_forged_sword"));
 
-		WeaponForgingShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ItemInit.IRON_BATTLE_AXE.get())
+		WeaponForgingShapedRecipeBuilder.shapedCombat(ItemInit.IRON_BATTLE_AXE.get())
 				.define('S', Items.STICK)
 				.define('I', Items.IRON_INGOT)
 				.pattern("   II")
@@ -103,7 +125,7 @@ public class SOWRecipeProvider extends RecipeProvider {
 				.unlockedBy("has_item", has(BlockInit.WEAPON_FORGER.get()))
 				.save(consumer, forgerIdMaker("iron_battle_axe"));
 
-		WeaponForgingShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ItemInit.DIAMOND_BATTLE_AXE.get())
+		WeaponForgingShapedRecipeBuilder.shapedCombat(ItemInit.DIAMOND_BATTLE_AXE.get())
 				.define('S', Items.STICK)
 				.define('D', Items.DIAMOND)
 				.pattern("   DD")
@@ -114,7 +136,7 @@ public class SOWRecipeProvider extends RecipeProvider {
 				.unlockedBy("has_item", has(BlockInit.WEAPON_FORGER.get()))
 				.save(consumer, forgerIdMaker("diamond_battle_axe"));
 
-		WeaponForgingShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ItemInit.IRON_BLADE.get())
+		WeaponForgingShapedRecipeBuilder.shapedCombat(ItemInit.IRON_BLADE.get())
 				.define('S', Items.STICK)
 				.define('I', Items.IRON_INGOT)
 				.pattern(" I   ")
@@ -125,7 +147,7 @@ public class SOWRecipeProvider extends RecipeProvider {
 				.unlockedBy("has_item", has(BlockInit.WEAPON_FORGER.get()))
 				.save(consumer, forgerIdMaker("iron_blade"));
 
-		WeaponForgingShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ItemInit.DIAMOND_BLADE.get())
+		WeaponForgingShapedRecipeBuilder.shapedCombat(ItemInit.DIAMOND_BLADE.get())
 				.define('S', Items.STICK)
 				.define('D', Items.DIAMOND)
 				.pattern(" D   ")
@@ -135,6 +157,17 @@ public class SOWRecipeProvider extends RecipeProvider {
 				.pattern(" S   ")
 				.unlockedBy("has_item", has(BlockInit.WEAPON_FORGER.get()))
 				.save(consumer, forgerIdMaker("diamond_blade"));
+
+		WeaponForgingShapedRecipeBuilder.shapedCombat(ItemInit.BLADED_STAFF.get())
+				.define('B', Weaponry.IRON_BLADE)
+				.define('S', Items.STICK)
+				.pattern("     ")
+				.pattern("     ")
+				.pattern("  B  ")
+				.pattern(" S   ")
+				.pattern("S    ")
+				.unlockedBy("has_item", has(BlockInit.WEAPON_FORGER.get()))
+				.save(consumer, forgerIdMaker("bladed_staff"));
 
 	}
 

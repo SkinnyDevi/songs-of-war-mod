@@ -20,14 +20,23 @@ public class Weaponry {
 			getWeaponProps(350));
 	public static final SwordItem DIAMOND_FORGED_SWORD = new SwordItem(Tiers.DIAMOND, getDamage(9), getUseSpeed(2F),
 			getWeaponProps(1650));
-	public static final SwordItem IRON_BATTLE_AXE = new SwordItem(Tiers.IRON, getDamage(12), getUseSpeed(1.2F),
+	public static final SwordItem IRON_BATTLE_AXE = new SwordItem(Tiers.IRON, getDamage(12), getUseSpeed(1.8F),
 			getWeaponProps(450));
-	public static final SwordItem DIAMOND_BATTLE_AXE = new SwordItem(Tiers.DIAMOND, getDamage(15), getUseSpeed(1.3F),
+	public static final SwordItem DIAMOND_BATTLE_AXE = new SwordItem(Tiers.DIAMOND, getDamage(15), getUseSpeed(1.7F),
 			getWeaponProps(1100));
-	public static final SwordItem IRON_BLADE = new SwordItem(Tiers.IRON, getDamage(8), getUseSpeed(2.3F),
+	public static final SwordItem IRON_BLADE = new SwordItem(Tiers.IRON, getDamage(7), getUseSpeed(2.1F),
 			getWeaponProps(150));
-	public static final SwordItem DIAMOND_BLADE = new SwordItem(Tiers.DIAMOND, getDamage(11), getUseSpeed(2.5F),
+	public static final SwordItem DIAMOND_BLADE = new SwordItem(Tiers.DIAMOND, getDamage(11), getUseSpeed(2.3F),
 			getWeaponProps(400));
+	public static final SwordItem STONE_DAGGER = new SwordItem(Tiers.STONE, getDamage(3), getUseSpeed(1.7F),
+			getWeaponProps(75));
+	public static final SwordItem IRON_DAGGER = new SwordItem(Tiers.IRON, getDamage(5), getUseSpeed(2.2F),
+			getWeaponProps(200));
+	public static final SwordItem DIAMOND_DAGGER = new SwordItem(Tiers.DIAMOND, getDamage(6), getUseSpeed(2.7F),
+			getWeaponProps(280));
+	public static final SwordItem BLADED_STAFF = new SwordItem(Tiers.IRON, getDamage(9), getUseSpeed(1.4F),
+			getWeaponProps(180));
+
 
 	public static final SwordItem DEATHSINGER_SWORD = new SwordItem(Tiers.NETHERITE, getDamage(24), getUseSpeed(2F),
 			getWeaponProps(2400));
@@ -67,6 +76,10 @@ public class Weaponry {
 		CreativeTabInit.WEAPONRY_TAB_ITEMS.add(MENDORIS_STAFF);
 		CreativeTabInit.WEAPONRY_TAB_ITEMS.add(SENDARIS_STAFF);
 		CreativeTabInit.WEAPONRY_TAB_ITEMS.add(VOLTARIS_STAFF);
+		CreativeTabInit.WEAPONRY_TAB_ITEMS.add(STONE_DAGGER);
+		CreativeTabInit.WEAPONRY_TAB_ITEMS.add(IRON_DAGGER);
+		CreativeTabInit.WEAPONRY_TAB_ITEMS.add(DIAMOND_DAGGER);
+		CreativeTabInit.WEAPONRY_TAB_ITEMS.add(BLADED_STAFF);
 	}
 
 	public static void addForgeryTabContents() {

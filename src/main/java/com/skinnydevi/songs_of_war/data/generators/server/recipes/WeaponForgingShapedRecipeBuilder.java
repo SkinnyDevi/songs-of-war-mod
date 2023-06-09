@@ -1,4 +1,4 @@
-package com.skinnydevi.songs_of_war.data.generators.server;
+package com.skinnydevi.songs_of_war.data.generators.server.recipes;
 
 import java.util.function.Consumer;
 
@@ -13,14 +13,15 @@ import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+
 import com.skinnydevi.songs_of_war.common.recipes.WeaponForgerRecipe;
+import com.skinnydevi.songs_of_war.data.generators.server.SOWRecipeProvider;
 
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementRewards;
 import net.minecraft.advancements.CriterionTriggerInstance;
 import net.minecraft.advancements.RequirementsStrategy;
 import net.minecraft.advancements.critereon.RecipeUnlockedTrigger;
-import net.minecraft.core.Registry;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeBuilder;
 import net.minecraft.data.recipes.RecipeCategory;
@@ -70,6 +71,14 @@ public class WeaponForgingShapedRecipeBuilder implements RecipeBuilder {
 		this.category = category;
 		this.result = result.asItem();
 		this.count = count;
+	}
+
+	public static WeaponForgingShapedRecipeBuilder shapedCombat(ItemLike result) {
+		return shaped(RecipeCategory.COMBAT, result, 1);
+	}
+
+	public static WeaponForgingShapedRecipeBuilder shapedCombat(ItemLike result, int count) {
+		return shaped(RecipeCategory.COMBAT, result, count);
 	}
 
 	public static WeaponForgingShapedRecipeBuilder shaped(RecipeCategory category, ItemLike result) {
