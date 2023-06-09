@@ -169,6 +169,38 @@ public class SOWRecipeProvider extends RecipeProvider {
 				.unlockedBy("has_item", has(BlockInit.WEAPON_FORGER.get()))
 				.save(consumer, forgerIdMaker("bladed_staff"));
 
+		WeaponForgingShapedRecipeBuilder.shapedCombat(ItemInit.IRON_GREATAXE.get())
+				.define('I', Items.IRON_INGOT)
+				.define('S', Items.STICK)
+				.pattern("   II")
+				.pattern("  ISI")
+				.pattern("  SII")
+				.pattern("IS   ")
+				.pattern("II   ")
+				.unlockedBy("has_item", has(BlockInit.WEAPON_FORGER.get()))
+				.save(consumer, forgerIdMaker("iron_greataxe"));
+
+		WeaponForgingShapedRecipeBuilder.shapedCombat(ItemInit.IRON_GREATSWORD.get())
+				.define('I', Items.IRON_INGOT)
+				.define('S', Items.STICK)
+				.pattern("    D")
+				.pattern("  DD ")
+				.pattern(" DDD ")
+				.pattern(" SD  ")
+				.pattern("S    ")
+				.unlockedBy("has_item", has(BlockInit.WEAPON_FORGER.get()))
+				.save(consumer, "iron_greatsword");
+
+		WeaponForgingShapedRecipeBuilder.shapedCombat(ItemInit.DIAMOND_GREATSWORD.get())
+				.define('D', Items.DIAMOND)
+				.define('S', Items.STICK)
+				.pattern("    D")
+				.pattern("  DD ")
+				.pattern(" DDD ")
+				.pattern(" SD  ")
+				.pattern("S    ")
+				.unlockedBy("has_item", has(BlockInit.WEAPON_FORGER.get()))
+				.save(consumer, "diamond_greatsword");
 	}
 
 	private static ResourceLocation idMaker(String recipeId) {

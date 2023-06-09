@@ -38,6 +38,9 @@ public class EN_US_LangProvider extends LanguageProvider {
 		add(ItemInit.IRON_DAGGER.get(), "Iron Dagger");
 		add(ItemInit.DIAMOND_DAGGER.get(), "Diamond Dagger");
 		add(ItemInit.BLADED_STAFF.get(), "Bladed Staff");
+		add(ItemInit.IRON_GREATAXE.get(), "Iron Greataxe");
+		add(ItemInit.IRON_GREATSWORD.get(), "Iron Greatsword");
+		add(ItemInit.DIAMOND_GREATSWORD.get(), "Diamond Greatsword");
 
 		add(ItemInit.DEATHSINGER_SWORD.get(), "DeathSinger's Sword");
 		add(ItemInit.TIDESINGER_STAFF.get(), "TideSinger's Staff");

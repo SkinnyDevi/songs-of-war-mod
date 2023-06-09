@@ -15,7 +15,8 @@ public class Weaponry {
 	// WEAPONS
 	public static final SwordItem STUBBY_AXE = new SwordItem(Tiers.IRON, getDamage(10), getUseSpeed(1),
 			getWeaponProps(350));
-
+	public static final SwordItem IRON_GREATAXE = new SwordItem(Tiers.IRON, getDamage(11), getUseSpeed(1.3F),
+			getWeaponProps(375));
 	public static final SwordItem IRON_FORGED_SWORD = new SwordItem(Tiers.IRON, getDamage(7), getUseSpeed(1.4F),
 			getWeaponProps(350));
 	public static final SwordItem DIAMOND_FORGED_SWORD = new SwordItem(Tiers.DIAMOND, getDamage(9), getUseSpeed(2F),
@@ -36,6 +37,10 @@ public class Weaponry {
 			getWeaponProps(280));
 	public static final SwordItem BLADED_STAFF = new SwordItem(Tiers.IRON, getDamage(9), getUseSpeed(1.4F),
 			getWeaponProps(180));
+	public static final SwordItem IRON_GREATSWORD = new SwordItem(Tiers.IRON, getDamage(8), getUseSpeed(1.6F),
+			getWeaponProps(210));
+	public static final SwordItem DIAMOND_GREATSWORD = new SwordItem(Tiers.DIAMOND, getDamage(11), getUseSpeed(1.8F),
+			getWeaponProps(550));
 
 
 	public static final SwordItem DEATHSINGER_SWORD = new SwordItem(Tiers.NETHERITE, getDamage(24), getUseSpeed(2F),
@@ -80,6 +85,9 @@ public class Weaponry {
 		CreativeTabInit.WEAPONRY_TAB_ITEMS.add(IRON_DAGGER);
 		CreativeTabInit.WEAPONRY_TAB_ITEMS.add(DIAMOND_DAGGER);
 		CreativeTabInit.WEAPONRY_TAB_ITEMS.add(BLADED_STAFF);
+		CreativeTabInit.WEAPONRY_TAB_ITEMS.add(IRON_GREATAXE);
+		CreativeTabInit.WEAPONRY_TAB_ITEMS.add(IRON_GREATSWORD);
+		CreativeTabInit.WEAPONRY_TAB_ITEMS.add(DIAMOND_GREATSWORD);
 	}
 
 	public static void addForgeryTabContents() {
