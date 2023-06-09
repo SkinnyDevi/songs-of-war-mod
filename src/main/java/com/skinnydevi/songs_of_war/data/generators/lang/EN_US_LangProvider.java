@@ -41,6 +41,13 @@ public class EN_US_LangProvider extends LanguageProvider {
 		add(ItemInit.IRON_GREATAXE.get(), "Iron Greataxe");
 		add(ItemInit.IRON_GREATSWORD.get(), "Iron Greatsword");
 		add(ItemInit.DIAMOND_GREATSWORD.get(), "Diamond Greatsword");
+		add(ItemInit.STONE_HALBERD.get(), "Stone Halberd");
+		add(ItemInit.IRON_HALBERD.get(), "Iron Halberd");
+		add(ItemInit.DIAMOND_HALBERD.get(), "Diamond Halberd");
+		add(ItemInit.IRON_HALBERD_DOUBLE.get(), "Iron Halberd Double");
+		add(ItemInit.DIAMOND_HALBERD_DOUBLE.get(), "Diamond Halberd Double");
+		add(ItemInit.IRON_REFORGED_HALBERD.get(), "Iron Reforged Halberd");
+		add(ItemInit.DIAMOND_REFORGED_HALBERD.get(), "Diamond Reforged Halberd");
 
 		add(ItemInit.DEATHSINGER_SWORD.get(), "DeathSinger's Sword");
 		add(ItemInit.TIDESINGER_STAFF.get(), "TideSinger's Staff");

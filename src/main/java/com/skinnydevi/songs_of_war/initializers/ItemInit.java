@@ -40,6 +40,21 @@ public class ItemInit {
 			() -> Weaponry.IRON_GREATSWORD);
 	public static final RegistryObject<Item> DIAMOND_GREATSWORD = ITEMS.register("diamond_greatsword",
 			() -> Weaponry.DIAMOND_GREATSWORD);
+	public static final RegistryObject<Item> STONE_HALBERD = ITEMS.register("stone_halberd",
+			() -> Weaponry.STONE_HALBERD);
+	public static final RegistryObject<Item> IRON_HALBERD = ITEMS.register("iron_halberd",
+			() -> Weaponry.IRON_HALBERD);
+	public static final RegistryObject<Item> DIAMOND_HALBERD = ITEMS.register("diamond_halberd",
+			() -> Weaponry.DIAMOND_HALBERD);
+	public static final RegistryObject<Item> IRON_HALBERD_DOUBLE = ITEMS.register("iron_halberd_double",
+			() -> Weaponry.IRON_HALBERD_DOUBLE);
+	public static final RegistryObject<Item> DIAMOND_HALBERD_DOUBLE = ITEMS.register("diamond_halberd_double",
+			() -> Weaponry.DIAMOND_HALBERD_DOUBLE);
+	public static final RegistryObject<Item> IRON_REFORGED_HALBERD = ITEMS.register("iron_reforged_halberd",
+			() -> Weaponry.IRON_REFORGED_HALBERD);
+	public static final RegistryObject<Item> DIAMOND_REFORGED_HALBERD = ITEMS.register("diamond_reforged_halberd",
+			() -> Weaponry.DIAMOND_REFORGED_HALBERD);
+
 
 	public static final RegistryObject<Item> NESTORIS_STAFF = ITEMS.register("nestoris_staff",
 			() -> Weaponry.NESTORIS_STAFF);

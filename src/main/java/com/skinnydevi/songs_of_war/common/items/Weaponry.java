@@ -41,6 +41,21 @@ public class Weaponry {
 			getWeaponProps(210));
 	public static final SwordItem DIAMOND_GREATSWORD = new SwordItem(Tiers.DIAMOND, getDamage(11), getUseSpeed(1.8F),
 			getWeaponProps(550));
+	public static final SwordItem STONE_HALBERD = new SwordItem(Tiers.STONE, getDamage(4), getUseSpeed(1.3F),
+			getWeaponProps(95));
+	public static final SwordItem IRON_HALBERD = new SwordItem(Tiers.IRON, getDamage(6), getUseSpeed(1.3F),
+			getWeaponProps(175));
+	public static final SwordItem DIAMOND_HALBERD = new SwordItem(Tiers.DIAMOND, getDamage(7), getUseSpeed(1.3F),
+			getWeaponProps(325));
+	public static final SwordItem IRON_HALBERD_DOUBLE = new SwordItem(Tiers.IRON, getDamage(7), getUseSpeed(1.2F),
+			getWeaponProps(225));
+	public static final SwordItem DIAMOND_HALBERD_DOUBLE = new SwordItem(Tiers.DIAMOND, getDamage(8), getUseSpeed(1.2F),
+			getWeaponProps(380));
+	public static final SwordItem IRON_REFORGED_HALBERD = new SwordItem(Tiers.IRON, getDamage(7), getUseSpeed(1.4F),
+			getWeaponProps(200));
+	public static final SwordItem DIAMOND_REFORGED_HALBERD = new SwordItem(Tiers.DIAMOND, getDamage(8), getUseSpeed(1.4F),
+			getWeaponProps(375));
+
 
 
 	public static final SwordItem DEATHSINGER_SWORD = new SwordItem(Tiers.NETHERITE, getDamage(24), getUseSpeed(2F),
@@ -88,6 +103,13 @@ public class Weaponry {
 		CreativeTabInit.WEAPONRY_TAB_ITEMS.add(IRON_GREATAXE);
 		CreativeTabInit.WEAPONRY_TAB_ITEMS.add(IRON_GREATSWORD);
 		CreativeTabInit.WEAPONRY_TAB_ITEMS.add(DIAMOND_GREATSWORD);
+		CreativeTabInit.WEAPONRY_TAB_ITEMS.add(STONE_HALBERD);
+		CreativeTabInit.WEAPONRY_TAB_ITEMS.add(IRON_HALBERD);
+		CreativeTabInit.WEAPONRY_TAB_ITEMS.add(DIAMOND_HALBERD);
+		CreativeTabInit.WEAPONRY_TAB_ITEMS.add(IRON_HALBERD_DOUBLE);
+		CreativeTabInit.WEAPONRY_TAB_ITEMS.add(DIAMOND_HALBERD_DOUBLE);
+		CreativeTabInit.WEAPONRY_TAB_ITEMS.add(IRON_REFORGED_HALBERD);
+		CreativeTabInit.WEAPONRY_TAB_ITEMS.add(DIAMOND_REFORGED_HALBERD);
 	}
 
 	public static void addForgeryTabContents() {

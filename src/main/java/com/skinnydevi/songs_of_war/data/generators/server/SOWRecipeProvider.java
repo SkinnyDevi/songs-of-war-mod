@@ -13,6 +13,7 @@ import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
+import org.jetbrains.annotations.NotNull;
 
 public class SOWRecipeProvider extends RecipeProvider {
 
@@ -21,7 +22,7 @@ public class SOWRecipeProvider extends RecipeProvider {
 	}
 
 	@Override
-	protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
+	protected void buildRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
 		this.registerNormalCraftingRecipes(consumer);
 		this.registerWeaponForgerRecipes(consumer);
 	}
@@ -34,7 +35,7 @@ public class SOWRecipeProvider extends RecipeProvider {
 				.pattern("SI ")
 				.pattern("S  ")
 				.unlockedBy("has_item", has(Items.IRON_INGOT))
-				.save(consumer, idMaker("iron_blacksmith_hammer_recipe"));
+				.save(consumer, idMaker("iron_blacksmith_hammer"));
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ItemInit.DIAMOND_BLACKSMITH_HAMMER.get())
 				.define('D', Items.DIAMOND)
@@ -43,7 +44,7 @@ public class SOWRecipeProvider extends RecipeProvider {
 				.pattern("SD ")
 				.pattern("S  ")
 				.unlockedBy("has_item", has(Items.DIAMOND))
-				.save(consumer, idMaker("diamond_blacksmith_hammer_recipe"));
+				.save(consumer, idMaker("diamond_blacksmith_hammer"));
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, BlockInit.WEAPON_FORGER.get())
 				.define('I', Items.IRON_INGOT)
@@ -53,7 +54,7 @@ public class SOWRecipeProvider extends RecipeProvider {
 				.pattern("IAI")
 				.pattern("SSS")
 				.unlockedBy("has_item", has(Blocks.ANVIL))
-				.save(consumer, idMaker("weapon_forger_recipe"));
+				.save(consumer, idMaker("weapon_forger"));
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ItemInit.STONE_DAGGER.get())
 				.define('S', Items.STONE)
@@ -61,7 +62,7 @@ public class SOWRecipeProvider extends RecipeProvider {
 				.pattern(" S")
 				.pattern("I ")
 				.unlockedBy("has_item", has(Items.STONE))
-				.save(consumer, idMaker("stone_dagger_recipe"));
+				.save(consumer, idMaker("stone_dagger"));
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ItemInit.IRON_DAGGER.get())
 				.define('I', Items.IRON_INGOT)
@@ -69,7 +70,7 @@ public class SOWRecipeProvider extends RecipeProvider {
 				.pattern(" I")
 				.pattern("S ")
 				.unlockedBy("has_item", has(Items.IRON_INGOT))
-				.save(consumer, idMaker("iron_dagger_recipe"));
+				.save(consumer, idMaker("iron_dagger"));
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ItemInit.DIAMOND_DAGGER.get())
 				.define('D', Items.DIAMOND)
@@ -77,7 +78,16 @@ public class SOWRecipeProvider extends RecipeProvider {
 				.pattern(" D")
 				.pattern("S ")
 				.unlockedBy("has_item", has(Items.DIAMOND))
-				.save(consumer, idMaker("diamond_dagger_recipe"));
+				.save(consumer, idMaker("diamond_dagger"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ItemInit.STONE_HALBERD.get())
+				.define('S', Items.STONE)
+				.define('I', Items.STICK)
+				.pattern("SSS")
+				.pattern(" IS")
+				.pattern("S  ")
+				.unlockedBy("has_item", has(Blocks.ANVIL))
+				.save(consumer, idMaker("stone_halberd"));
 	}
 
 	private void registerWeaponForgerRecipes(Consumer<FinishedRecipe> consumer) {
@@ -183,10 +193,10 @@ public class SOWRecipeProvider extends RecipeProvider {
 		WeaponForgingShapedRecipeBuilder.shapedCombat(ItemInit.IRON_GREATSWORD.get())
 				.define('I', Items.IRON_INGOT)
 				.define('S', Items.STICK)
-				.pattern("    D")
-				.pattern("  DD ")
-				.pattern(" DDD ")
-				.pattern(" SD  ")
+				.pattern("    I")
+				.pattern("  II ")
+				.pattern(" III ")
+				.pattern(" SI  ")
 				.pattern("S    ")
 				.unlockedBy("has_item", has(BlockInit.WEAPON_FORGER.get()))
 				.save(consumer, "iron_greatsword");
@@ -201,10 +211,76 @@ public class SOWRecipeProvider extends RecipeProvider {
 				.pattern("S    ")
 				.unlockedBy("has_item", has(BlockInit.WEAPON_FORGER.get()))
 				.save(consumer, "diamond_greatsword");
+
+		WeaponForgingShapedRecipeBuilder.shapedCombat(ItemInit.IRON_HALBERD.get())
+				.define('I', Items.IRON_INGOT)
+				.define('S', Items.STICK)
+				.pattern("  III")
+				.pattern("  IS ")
+				.pattern("  S  ")
+				.pattern(" S   ")
+				.pattern("I    ")
+				.unlockedBy("has_item", has(BlockInit.WEAPON_FORGER.get()))
+				.save(consumer, "iron_halberd");
+
+		WeaponForgingShapedRecipeBuilder.shapedCombat(ItemInit.DIAMOND_HALBERD.get())
+				.define('D', Items.DIAMOND)
+				.define('S', Items.STICK)
+				.pattern("  DDD")
+				.pattern("  DS ")
+				.pattern("  S  ")
+				.pattern(" S   ")
+				.pattern("D    ")
+				.unlockedBy("has_item", has(BlockInit.WEAPON_FORGER.get()))
+				.save(consumer, "diamond_halberd");
+
+		WeaponForgingShapedRecipeBuilder.shapedCombat(ItemInit.IRON_HALBERD_DOUBLE.get())
+				.define('I', Items.IRON_INGOT)
+				.define('S', Items.STICK)
+				.pattern("  III")
+				.pattern("  ISI")
+				.pattern("  SII")
+				.pattern(" S   ")
+				.pattern("I    ")
+				.unlockedBy("has_item", has(BlockInit.WEAPON_FORGER.get()))
+				.save(consumer, "iron_halberd_double");
+
+		WeaponForgingShapedRecipeBuilder.shapedCombat(ItemInit.DIAMOND_HALBERD_DOUBLE.get())
+				.define('D', Items.DIAMOND)
+				.define('S', Items.STICK)
+				.pattern("  DDD")
+				.pattern("  DSD")
+				.pattern("  SDD")
+				.pattern(" S   ")
+				.pattern("D    ")
+				.unlockedBy("has_item", has(BlockInit.WEAPON_FORGER.get()))
+				.save(consumer, "diamond_halberd_double");
+
+		WeaponForgingShapedRecipeBuilder.shapedCombat(ItemInit.IRON_REFORGED_HALBERD.get())
+				.define('I', Items.IRON_INGOT)
+				.define('S', Items.STICK)
+				.pattern("    I")
+				.pattern("   SI")
+				.pattern("  SII")
+				.pattern(" SI I")
+				.pattern("I  II")
+				.unlockedBy("has_item", has(BlockInit.WEAPON_FORGER.get()))
+				.save(consumer, "iron_reforged_halberd");
+
+		WeaponForgingShapedRecipeBuilder.shapedCombat(ItemInit.DIAMOND_REFORGED_HALBERD.get())
+				.define('D', Items.DIAMOND)
+				.define('S', Items.STICK)
+				.pattern("    D")
+				.pattern("   SD")
+				.pattern("  SDD")
+				.pattern(" SD D")
+				.pattern("D  DD")
+				.unlockedBy("has_item", has(BlockInit.WEAPON_FORGER.get()))
+				.save(consumer, "diamond_reforged_halberd");
 	}
 
 	private static ResourceLocation idMaker(String recipeId) {
-		return new ResourceLocation(SongsOfWarMod.MOD_ID, recipeId);
+		return new ResourceLocation(SongsOfWarMod.MOD_ID, recipeId + "_recipe");
 	}
 
 	private static ResourceLocation forgerIdMaker(String recipeId) {
