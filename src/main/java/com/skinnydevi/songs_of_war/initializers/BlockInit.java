@@ -5,6 +5,7 @@ import java.util.function.Supplier;
 import com.skinnydevi.songs_of_war.SongsOfWarMod;
 import com.skinnydevi.songs_of_war.common.blocks.WeaponForger;
 
+import com.skinnydevi.songs_of_war.common.items.SOWItemGroups;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -19,7 +20,11 @@ public class BlockInit {
 			SongsOfWarMod.MOD_ID);
 
 	public static final RegistryObject<Block> WEAPON_FORGER = registerBlock("weapon_forger", () -> new WeaponForger(),
-			SongsOfWarMod.FORGERY_TAB);
+			SOWItemGroups.FORGERY_TAB);
+
+	public static void addForgeryTabContents() {
+		CreativeTabInit.FORGERY_TAB_ITEMS.add(WEAPON_FORGER.get().asItem());
+	}
 
 	// HELPER METHODS
 
@@ -32,6 +37,6 @@ public class BlockInit {
 
 	private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block,
 			CreativeModeTab tab) {
-		return ItemInit.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().tab(tab)));
+		return ItemInit.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
 	}
 }

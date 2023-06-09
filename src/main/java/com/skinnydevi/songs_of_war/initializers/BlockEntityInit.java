@@ -10,7 +10,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class BlockEntityInit {
 	public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister
-			.create(ForgeRegistries.BLOCK_ENTITIES, SongsOfWarMod.MOD_ID);
+			.create(ForgeRegistries.BLOCK_ENTITY_TYPES, SongsOfWarMod.MOD_ID);
 
 	public static final RegistryObject<BlockEntityType<WeaponForgerBlockEntity>> WEAPON_FORGER_BLOCK_ENTITY = BLOCK_ENTITIES
 			.register("weapon_forger_block_entity", () -> BlockEntityType.Builder

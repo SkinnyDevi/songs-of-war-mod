@@ -101,7 +101,7 @@ public class WeaponForger extends BaseEntityBlock {
 		if (!pLevel.isClientSide()) {
 			BlockEntity entity = pLevel.getBlockEntity(pPos);
 			if (entity instanceof WeaponForgerBlockEntity) {
-				NetworkHooks.openGui(((ServerPlayer) pPlayer), (WeaponForgerBlockEntity) entity, pPos);
+				NetworkHooks.openScreen(((ServerPlayer) pPlayer), (WeaponForgerBlockEntity) entity, pPos);
 			} else {
 				throw new IllegalStateException("Container provider is missing!");
 			}

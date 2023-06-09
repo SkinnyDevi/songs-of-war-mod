@@ -7,10 +7,11 @@ import com.skinnydevi.songs_of_war.data.generators.server.SOWLootTableProvider;
 import com.skinnydevi.songs_of_war.data.generators.server.SOWRecipeProvider;
 
 import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 
 /**
  * Main Data Generator class for various generators.
@@ -23,24 +24,25 @@ public class ResourceGenerator {
 	@SubscribeEvent
 	public static void gatherData(GatherDataEvent event) {
 		DataGenerator gen = event.getGenerator();
+		PackOutput pckout = gen.getPackOutput();
 		ExistingFileHelper fileHelper = event.getExistingFileHelper();
 
 		if (event.includeServer()) {
 			// Recipes
-			gen.addProvider(true, new SOWRecipeProvider(gen));
+			gen.addProvider(true, new SOWRecipeProvider(pckout));
 
 			// Loot Tables
-			gen.addProvider(true, new SOWLootTableProvider(gen));
+			gen.addProvider(true, new SOWLootTableProvider(pckout));
 		}
 		if (event.includeClient()) {
 			// BlockStates
 			// gen.addProvider(new WaterHeatModBlockStateProvider(gen, fileHelper));
 
 			// Items
-			gen.addProvider(true, new SOWItemModelProvider(gen, fileHelper));
+			gen.addProvider(true, new SOWItemModelProvider(pckout, fileHelper));
 
 			// Language Providers
-			gen.addProvider(true, new EN_US_LangProvider(gen));
+			gen.addProvider(true, new EN_US_LangProvider(pckout));
 		}
 	}
 }

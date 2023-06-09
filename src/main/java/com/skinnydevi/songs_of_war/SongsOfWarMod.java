@@ -2,15 +2,7 @@ package com.skinnydevi.songs_of_war;
 
 import com.mojang.logging.LogUtils;
 
-import com.skinnydevi.songs_of_war.common.items.itemgroups.ForgeryTab;
-import com.skinnydevi.songs_of_war.common.items.itemgroups.WeaponryTab;
-import com.skinnydevi.songs_of_war.initializers.BlockEntityInit;
-import com.skinnydevi.songs_of_war.initializers.BlockInit;
-import com.skinnydevi.songs_of_war.initializers.ItemInit;
-import com.skinnydevi.songs_of_war.initializers.MenuTypeInit;
-import com.skinnydevi.songs_of_war.initializers.RecipeInit;
-
-import net.minecraft.world.item.CreativeModeTab;
+import com.skinnydevi.songs_of_war.initializers.*;
 
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -26,9 +18,6 @@ public class SongsOfWarMod {
 	public static final String MOD_ID = "songs_of_war";
 	public static final Logger LOGGER = LogUtils.getLogger();
 
-	public static final CreativeModeTab WEAPONRY_TAB = new WeaponryTab();
-	public static final CreativeModeTab FORGERY_TAB = new ForgeryTab();
-
 	public SongsOfWarMod() {
 		IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
 
@@ -42,6 +31,8 @@ public class SongsOfWarMod {
 		modBus.addListener(this::preInitClient);
 
 		MinecraftForge.EVENT_BUS.register(this);
+
+		modBus.addListener(CreativeTabInit::addCreative);
 	}
 
 	private void preInit(final FMLCommonSetupEvent event) {

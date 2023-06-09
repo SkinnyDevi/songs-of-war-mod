@@ -2,6 +2,7 @@ package com.skinnydevi.songs_of_war.common.items;
 
 import com.skinnydevi.songs_of_war.SongsOfWarMod;
 
+import com.skinnydevi.songs_of_war.initializers.CreativeTabInit;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tiers;
@@ -46,17 +47,41 @@ public class Weaponry {
 			getWeaponProps(1200));
 
 	// BLACKSMITH'S TOOLS
+
 	public static final SwordItem IRON_BLACKSMITH_HAMMER = new SwordItem(Tiers.IRON, 0, 0, getForgerProps(650));
 	public static final SwordItem DIAMOND_BLACKSMITH_HAMMER = new SwordItem(Tiers.DIAMOND, 1, 0, getForgerProps(1700));
+
+	// REGISTER TO CREATIVE TAB
+	public static void addWeaponryTabContents() {
+		CreativeTabInit.WEAPONRY_TAB_ITEMS.add(STUBBY_AXE);
+		CreativeTabInit.WEAPONRY_TAB_ITEMS.add(IRON_FORGED_SWORD);
+		CreativeTabInit.WEAPONRY_TAB_ITEMS.add(DIAMOND_FORGED_SWORD);
+		CreativeTabInit.WEAPONRY_TAB_ITEMS.add(IRON_BATTLE_AXE);
+		CreativeTabInit.WEAPONRY_TAB_ITEMS.add(DIAMOND_BATTLE_AXE);
+		CreativeTabInit.WEAPONRY_TAB_ITEMS.add(IRON_BLADE);
+		CreativeTabInit.WEAPONRY_TAB_ITEMS.add(DIAMOND_BLADE);
+		CreativeTabInit.WEAPONRY_TAB_ITEMS.add(DEATHSINGER_SWORD);
+		CreativeTabInit.WEAPONRY_TAB_ITEMS.add(TIDESINGER_STAFF);
+		CreativeTabInit.WEAPONRY_TAB_ITEMS.add(NESTORIS_STAFF);
+		CreativeTabInit.WEAPONRY_TAB_ITEMS.add(KALTARIS_STAFF);
+		CreativeTabInit.WEAPONRY_TAB_ITEMS.add(MENDORIS_STAFF);
+		CreativeTabInit.WEAPONRY_TAB_ITEMS.add(SENDARIS_STAFF);
+		CreativeTabInit.WEAPONRY_TAB_ITEMS.add(VOLTARIS_STAFF);
+	}
+
+	public static void addForgeryTabContents() {
+		CreativeTabInit.FORGERY_TAB_ITEMS.add(IRON_BLACKSMITH_HAMMER);
+		CreativeTabInit.FORGERY_TAB_ITEMS.add(DIAMOND_BLACKSMITH_HAMMER);
+	}
 
 	// Helper Methods
 
 	private static Item.Properties getWeaponProps(int durability) {
-		return new Item.Properties().tab(SongsOfWarMod.WEAPONRY_TAB).defaultDurability(durability);
+		return new Item.Properties().defaultDurability(durability);
 	}
 
 	private static Item.Properties getForgerProps(int durability) {
-		return new Item.Properties().tab(SongsOfWarMod.FORGERY_TAB).defaultDurability(durability);
+		return new Item.Properties().defaultDurability(durability);
 	}
 
 	private static int getDamage(int damage) {

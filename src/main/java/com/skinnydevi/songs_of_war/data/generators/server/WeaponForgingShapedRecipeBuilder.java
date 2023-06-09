@@ -23,12 +23,14 @@ import net.minecraft.advancements.critereon.RecipeUnlockedTrigger;
 import net.minecraft.core.Registry;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeBuilder;
+import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
+import net.minecraftforge.registries.ForgeRegistries;
 
 /**
  * Custom copy of the native {@code ShapedRecipeBuilder} to generate dynamically
@@ -55,6 +57,7 @@ import net.minecraft.world.level.ItemLike;
  * 
  */
 public class WeaponForgingShapedRecipeBuilder implements RecipeBuilder {
+	private final RecipeCategory category;
 	private final Item result;
 	private final int count;
 	private final List<String> rows = Lists.newArrayList();
@@ -63,21 +66,18 @@ public class WeaponForgingShapedRecipeBuilder implements RecipeBuilder {
 	@Nullable
 	private String group;
 
-	public WeaponForgingShapedRecipeBuilder(ItemLike result) {
-		this(result, 1);
-	}
-
-	public WeaponForgingShapedRecipeBuilder(ItemLike result, int count) {
+	public WeaponForgingShapedRecipeBuilder(RecipeCategory category, ItemLike result, int count) {
+		this.category = category;
 		this.result = result.asItem();
 		this.count = count;
 	}
 
-	public static WeaponForgingShapedRecipeBuilder shaped(ItemLike result) {
-		return shaped(result, 1);
+	public static WeaponForgingShapedRecipeBuilder shaped(RecipeCategory category, ItemLike result) {
+		return shaped(category, result, 1);
 	}
 
-	public static WeaponForgingShapedRecipeBuilder shaped(ItemLike result, int count) {
-		return new WeaponForgingShapedRecipeBuilder(result, count);
+	public static WeaponForgingShapedRecipeBuilder shaped(RecipeCategory category, ItemLike result, int count) {
+		return new WeaponForgingShapedRecipeBuilder(category, result, count);
 	}
 
 	public WeaponForgingShapedRecipeBuilder define(Character identifier, TagKey<Item> ingredient) {
@@ -139,7 +139,7 @@ public class WeaponForgingShapedRecipeBuilder implements RecipeBuilder {
 
 	private ResourceLocation recipeLocation(ResourceLocation resultId) {
 		return new ResourceLocation(resultId.getNamespace(),
-				"recipes/" + this.result.getItemCategory().getRecipeFolderName() + "/" + resultId.getPath());
+				"recipes/" + this.category.getFolderName() + "/" + resultId.getPath());
 	}
 
 	private void ensureValid(ResourceLocation id) {
@@ -213,7 +213,7 @@ public class WeaponForgingShapedRecipeBuilder implements RecipeBuilder {
 
 			json.add("key", jsonobject);
 			JsonObject jsonobject1 = new JsonObject();
-			jsonobject1.addProperty("item", Registry.ITEM.getKey(this.result).toString());
+			jsonobject1.addProperty("item", ForgeRegistries.ITEMS.getKey(this.result).toString());
 
 			if (this.count > 1)
 				jsonobject1.addProperty("count", this.count);

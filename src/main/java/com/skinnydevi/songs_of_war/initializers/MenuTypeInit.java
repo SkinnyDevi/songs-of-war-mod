@@ -15,7 +15,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class MenuTypeInit {
-	public static final DeferredRegister<MenuType<?>> MENUS = DeferredRegister.create(ForgeRegistries.CONTAINERS,
+	public static final DeferredRegister<MenuType<?>> MENUS = DeferredRegister.create(ForgeRegistries.MENU_TYPES,
 			SongsOfWarMod.MOD_ID);
 
 	public static final RegistryObject<MenuType<WeaponForgerMenu>> WEAPON_FORGER_MENU = registerMenuType(

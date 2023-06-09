@@ -5,6 +5,7 @@ import java.util.Optional;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import org.jetbrains.annotations.NotNull;
 
 import com.skinnydevi.songs_of_war.client.gui.WeaponForgerMenu;
@@ -28,7 +29,6 @@ import net.minecraft.world.level.block.state.BlockState;
 
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.util.LazyOptional;
-import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 
@@ -69,7 +69,7 @@ public class WeaponForgerBlockEntity extends BlockEntity implements MenuProvider
 	@Nonnull
 	@Override
 	public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @Nullable Direction side) {
-		if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY)
+		if (cap == ForgeCapabilities.ITEM_HANDLER)
 			return lazyItemHandler.cast();
 
 		return super.getCapability(cap, side);

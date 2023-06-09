@@ -5,12 +5,13 @@ import com.skinnydevi.songs_of_war.initializers.BlockInit;
 import com.skinnydevi.songs_of_war.initializers.ItemInit;
 
 import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.LanguageProvider;
 
 public class EN_US_LangProvider extends LanguageProvider {
 
-	public EN_US_LangProvider(DataGenerator gen) {
-		super(gen, SongsOfWarMod.MOD_ID, "en_us");
+	public EN_US_LangProvider(PackOutput pckout) {
+		super(pckout, SongsOfWarMod.MOD_ID, "en_us");
 	}
 
 	// private static String customdeath(String type) {
