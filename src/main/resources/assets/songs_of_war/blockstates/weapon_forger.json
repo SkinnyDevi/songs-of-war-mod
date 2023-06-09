@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "songs_of_war:block/weapon_forger" },
+    "facing=east": { "model": "songs_of_war:block/weapon_forger", "y": 90 },
+    "facing=south": { "model": "songs_of_war:block/weapon_forger", "y": 180 },
+    "facing=west": { "model": "songs_of_war:block/weapon_forger", "y": 270 }
+  }
+}
