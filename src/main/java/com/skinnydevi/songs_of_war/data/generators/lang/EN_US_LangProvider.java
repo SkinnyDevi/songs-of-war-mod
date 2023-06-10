@@ -48,6 +48,8 @@ public class EN_US_LangProvider extends LanguageProvider {
 		add(ItemInit.DIAMOND_HALBERD_DOUBLE.get(), "Diamond Halberd Double");
 		add(ItemInit.IRON_REFORGED_HALBERD.get(), "Iron Reforged Halberd");
 		add(ItemInit.DIAMOND_REFORGED_HALBERD.get(), "Diamond Reforged Halberd");
+		add(ItemInit.IRON_MACE.get(), "Iron Mace");
+		add(ItemInit.LEOPARD_DAGGER.get(), "Leopard Dagger");
 
 		add(ItemInit.DEATHSINGER_SWORD.get(), "DeathSinger's Sword");
 		add(ItemInit.TIDESINGER_STAFF.get(), "TideSinger's Staff");

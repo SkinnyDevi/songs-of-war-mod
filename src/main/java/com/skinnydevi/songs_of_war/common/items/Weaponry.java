@@ -55,6 +55,10 @@ public class Weaponry {
 			getWeaponProps(200));
 	public static final SwordItem DIAMOND_REFORGED_HALBERD = new SwordItem(Tiers.DIAMOND, getDamage(8), getUseSpeed(1.4F),
 			getWeaponProps(375));
+	public static final SwordItem IRON_MACE = new SwordItem(Tiers.IRON, getDamage(7), getUseSpeed(1F),
+			getWeaponProps(175));
+	public static final SwordItem LEOPARD_DAGGER = new SwordItem(Tiers.IRON, getDamage(7), getUseSpeed(2.1F),
+			getWeaponProps(180));
 
 
 
@@ -110,6 +114,8 @@ public class Weaponry {
 		CreativeTabInit.WEAPONRY_TAB_ITEMS.add(DIAMOND_HALBERD_DOUBLE);
 		CreativeTabInit.WEAPONRY_TAB_ITEMS.add(IRON_REFORGED_HALBERD);
 		CreativeTabInit.WEAPONRY_TAB_ITEMS.add(DIAMOND_REFORGED_HALBERD);
+		CreativeTabInit.WEAPONRY_TAB_ITEMS.add(IRON_MACE);
+		CreativeTabInit.WEAPONRY_TAB_ITEMS.add(LEOPARD_DAGGER);
 	}
 
 	public static void addForgeryTabContents() {

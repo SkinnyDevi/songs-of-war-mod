@@ -277,6 +277,30 @@ public class SOWRecipeProvider extends RecipeProvider {
 				.pattern("D  DD")
 				.unlockedBy("has_item", has(BlockInit.WEAPON_FORGER.get()))
 				.save(consumer, "diamond_reforged_halberd");
+
+		WeaponForgingShapedRecipeBuilder.shapedCombat(ItemInit.IRON_MACE.get())
+				.define('I', Items.IRON_INGOT)
+				.define('S', Items.STICK)
+				.pattern("   II")
+				.pattern("   SI")
+				.pattern("  S  ")
+				.pattern(" S   ")
+				.pattern("I    ")
+				.unlockedBy("has_item", has(BlockInit.WEAPON_FORGER.get()))
+				.save(consumer, "iron_mace");
+
+		WeaponForgingShapedRecipeBuilder.shapedCombat(ItemInit.LEOPARD_DAGGER.get())
+				.define('D', Weaponry.IRON_DAGGER)
+				.define('S', Items.STICK)
+				.define('I', Items.IRON_INGOT)
+				.pattern("   I ")
+				.pattern("   I ")
+				.pattern("  D  ")
+				.pattern(" S   ")
+				.pattern("I    ")
+				.unlockedBy("has_item", has(BlockInit.WEAPON_FORGER.get()))
+				.save(consumer, "leopard_dagger");
+
 	}
 
 	private static ResourceLocation idMaker(String recipeId) {

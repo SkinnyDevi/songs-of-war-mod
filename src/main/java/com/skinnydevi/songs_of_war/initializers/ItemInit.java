@@ -54,6 +54,10 @@ public class ItemInit {
 			() -> Weaponry.IRON_REFORGED_HALBERD);
 	public static final RegistryObject<Item> DIAMOND_REFORGED_HALBERD = ITEMS.register("diamond_reforged_halberd",
 			() -> Weaponry.DIAMOND_REFORGED_HALBERD);
+	public static final RegistryObject<Item> IRON_MACE = ITEMS.register("iron_mace",
+			() -> Weaponry.IRON_MACE);
+	public static final RegistryObject<Item> LEOPARD_DAGGER = ITEMS.register("leopard_dagger",
+			() -> Weaponry.LEOPARD_DAGGER);
 
 
 	public static final RegistryObject<Item> NESTORIS_STAFF = ITEMS.register("nestoris_staff",
